@@ -1,0 +1,82 @@
+﻿@model MOTOSystem.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.u_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_roles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_roles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_passcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_passcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_pic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_pic)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.u_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

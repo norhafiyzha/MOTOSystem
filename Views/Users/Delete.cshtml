@@ -1,0 +1,88 @@
+﻿@model MOTOSystem.Models.User
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.u_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_roles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_roles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_passcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_passcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.u_pic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.u_pic)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

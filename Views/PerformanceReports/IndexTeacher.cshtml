@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MOTOSystem.Models.PerformanceReport>
+
+@{
+    ViewBag.Title = "IndexTeacher";
+}
+
+<h2>Student Performance Report</h2>
+<div class="container-fluid content-top-gap">
+
+    <!-- breadcrumbs -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb my-breadcrumb">
+            <li class="breadcrumb-item"><a href="@Url.Action("TDashboard","Users")">Utama</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Rekod Prestasi Pelajar</li>
+        </ol>
+    </nav>
+    <!-- //breadcrumbs -->
+    <!-- forms -->
+    <section class="forms">
+        <!-- forms 2 -->
+        <div class="card card_border py-2 mb-4">
+            <h1>Rekod Prestasi Pelajar</h1>
+            <p>
+                @Html.ActionLink("Create New", "Create", new { @class = "btn btn-info" })
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.p_month)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.student_performance)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.class_date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.class_ref)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.p_status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.User.u_fname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.u_id)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.p_month)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.student_performance)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.class_date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.class_ref)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.p_status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.u_fname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.u_id)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.p_id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.p_id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.p_id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+        <!-- //forms 2 -->
+    </section>
+</div>

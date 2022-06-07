@@ -1,0 +1,50 @@
+﻿@model MOTOSystem.Models.ClassRecord
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClassRecord</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.class_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.class_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.class_teacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.class_teacher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class_Package1.cp_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class_Package1.cp_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.u_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.u_password)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.class_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

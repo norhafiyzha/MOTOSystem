@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MOTOSystem.Models.SalaryInvoice>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.u_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.i_amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.i_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.i_month)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.u_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.i_amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.i_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.i_month)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.i_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.i_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.i_id })
+        </td>
+    </tr>
+}
+
+</table>
