@@ -45,6 +45,17 @@
                     <!-- sidebar nav start -->
                     <ul class="nav nav-pills nav-stacked custom-nav">
                         <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
+                        <li class="menu-list">
+                            <a href="@Url.Action("Index","Users" )">
+                                <i class="fa fa-address-book"></i>
+                                <span>Pengurusan Pengguna<i class="lnr lnr-chevron-right"></i></span>
+                            </a>
+                            <ul class="sub-menu-list">
+                                <li><a href="@Url.Action("Index","Users" )">Rekod Keseluruhan Pengguna</a></li>
+                                <li><a href="@Url.Action("Index","Users" )">Rekod Pelajar</a> </li>
+                                <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>
+                            </ul>
+                        </li>
                         <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
                         <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Pengurusan Gaji</span></a></li>
                         <li><a href="@Url.Action("Index","ClassPackage")"><i class="fa fa-cogs"></i> <span>Pengurusan Pakej</span></a></li>
