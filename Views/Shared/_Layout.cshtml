@@ -149,7 +149,7 @@
                                                 <span class="status ml-2">@Session["userRole"]</span>
                                             </li>
                                             <li> <a href="@Url.Action("EditProfile", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Kemaskini Profil</a> </li>
-                                            <li> <a href="@Url.Action("ChangePicture", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Ubah Gambar Profil</a> </li>
+                                            <li> <a href="@Url.Action("EditProfile", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Ubah Gambar Profil</a> </li>
                                             <li> <a href="@Url.Action("Changepassword", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Ubah Kata Laluan</a> </li>
                                             <li class="logout"> <a href="@Url.Action("Login","Login")"><i class="fa fa-power-off"></i> Logout</a> </li>
                                         </ul>

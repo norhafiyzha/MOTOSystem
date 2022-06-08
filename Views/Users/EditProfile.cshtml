@@ -64,6 +64,13 @@
                                 @Html.ValidationMessageFor(model => model.u_contact, "", new { @class = "text-danger" })
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.u_pic, htmlAttributes: new { @class = "control-label col-md-6" })
+                                <div class="col-md-10">
+                                    <input type="file" name="ImageFile" />
+                                </div>
+                        </div>
                         <button type="submit" value="Save" class="btn btn-primary btn-style mt-4">Kemaskini</button>
                     </form>
                 </div>

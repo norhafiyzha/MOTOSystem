@@ -120,7 +120,6 @@ namespace MOTOSystem.Controllers
             return View(user);
         }
 
-        
         // GET: Users/Delete/5
         public ActionResult Delete(string id)
         {

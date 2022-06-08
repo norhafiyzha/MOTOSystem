@@ -13,6 +13,7 @@ namespace MOTOSystem.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
+    using System.Web;
 
     public partial class User
     {
@@ -54,6 +55,8 @@ namespace MOTOSystem.Models
         
         [DisplayName("Gambar Profil")]
         public string u_pic { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
 
         public string LoginErrorMessage { get; set; }
         public bool RememberMe { get; set; }
