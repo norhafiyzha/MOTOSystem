@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace MOTOSystem.Controllers
+    //shasither
 {
     public class HomeController : Controller
     {
