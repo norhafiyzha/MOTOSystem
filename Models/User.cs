@@ -51,7 +51,7 @@ namespace MOTOSystem.Models
         public string u_contact { get; set; }
 
         public string u_passcode { get; set; }
-        [Required]
+        
         [DisplayName("Gambar Profil")]
         public string u_pic { get; set; }
 
