@@ -1,0 +1,48 @@
+﻿@model MOTOSystem.Models.PerformanceReport
+
+@{
+    ViewBag.Title = "ReportPrint";
+}
+
+
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Performance Report</title>
+    <link rel="stylesheet" href="~/assets/css/Style2.css">
+
+</head>
+<body>
+    <header>
+        <h1>Performance Report</h1>
+    </header>
+    <article>
+        <h1>@Html.DisplayFor(model => model.User.u_fname) + " "+ @Html.DisplayFor(model => model.User.u_lname) </h1>
+        <address contenteditable>
+            <p>@Html.DisplayFor(model => model.p_month)<br>@Html.DisplayFor(model => model.class_date)</p>
+        </address>
+        <dl class="dl-horizontal">
+            <dt>
+                Class Status
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.p_status)
+            </dd>
+            <dt>
+                Teacher Report
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.student_performance)
+            </dd>
+        </dl>
+
+
+
+    </article>
+    <button onclick="window.print()">Print Report</button>
+
+</body>
+</html>
