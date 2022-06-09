@@ -17,8 +17,12 @@ namespace MOTOSystem.Controllers
             {
                 var user = db.Users.Count();
                 var admin = db.Users.Where(x => x.u_roles == "Admin").Count();
+                var teacher = db.Users.Where(x => x.u_roles == "Ustaz" || x.u_roles == "Ustazah").Count();
+                var student = db.Users.Where(x => x.u_roles == "Pelajar").Count();
                 ViewBag.User = user;
                 ViewBag.Admin = admin;
+                ViewBag.Teacher = teacher;
+                ViewBag.Student = student;
 
             }
             return View();
