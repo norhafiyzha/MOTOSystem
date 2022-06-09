@@ -36,7 +36,7 @@
                 <!-- //image logo -->
 
                 <div class="logo-icon text-center">
-                    <a href="@Url.Action("ADashboard","Users" )" title="logo"><img src="~/assets/images/logo.png" alt="logo-icon"> </a>
+                    <a href="@Url.Action("ADashboard", "Users")" title="logo"><img src="~/assets/images/logo.png" alt="logo-icon"> </a>
                 </div>
                 <!-- //logo end -->
 
@@ -44,7 +44,29 @@
 
                     <!-- sidebar nav start -->
                     <ul class="nav nav-pills nav-stacked custom-nav">
-                        <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
+                        @if (Session["userRole"].ToString() == "Admin")
+                        {
+                            <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
+                            <li class="menu-list">
+                                <a href="@Url.Action("Index","Users" )">
+                                    <i class="fa fa-address-book"></i>
+                                    <span>Pengurusan Pengguna<i class="lnr lnr-chevron-right"></i></span>
+                                </a>
+                                <ul class="sub-menu-list">
+                                    <li><a href="@Url.Action("Index","Users" )">Rekod Keseluruhan Pengguna</a></li>
+                                    <li><a href="@Url.Action("Index","Users" )">Rekod Pelajar</a> </li>
+                                    <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
+                            <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Pengurusan Gaji</span></a></li>
+                            <li><a href="@Url.Action("Index","ClassPackage")"><i class="fa fa-cogs"></i> <span>Pengurusan Pakej</span></a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
+                        }
+                        @*<li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
                         <li class="menu-list">
                             <a href="@Url.Action("Index","Users" )">
                                 <i class="fa fa-address-book"></i>
@@ -56,9 +78,10 @@
                                 <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>
                             </ul>
                         </li>
-                        <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
+                        
                         <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Pengurusan Gaji</span></a></li>
-                        <li><a href="@Url.Action("Index","ClassPackage")"><i class="fa fa-cogs"></i> <span>Pengurusan Pakej</span></a></li>
+                        <li><a href="@Url.Action("Index","ClassPackage")"><i class="fa fa-cogs"></i> <span>Pengurusan Pakej</span></a></li>*@
+
                     </ul>
                     <!-- //sidebar nav end -->
                     <!-- toggle button start -->
@@ -167,7 +190,7 @@
                 @RenderBody()
                 <hr />
                 <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                    <p>&copy; @DateTime.Now.Year - Mengaji One To One System  |  Avian Technologies</p>
                 </footer>
             </div>
             <!-- main content end-->
