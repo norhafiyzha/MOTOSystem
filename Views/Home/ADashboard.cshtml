@@ -15,7 +15,7 @@
             </ol>
         </nav>
         <div class="welcome-msg pt-3 pb-4">
-            <h1>Assalamualaikum <span class="text-primary">@Session["userRole"] @Session["userName"]</span></h1>
+            <h1>Assalamualaikum <span class="text-primary">@Session["userRole"]</span></h1>
             <p></p>
         </div>
 
@@ -28,7 +28,7 @@
                         <div class="col-sm-6 pr-sm-2 statistics-grid">
                             <div class="card card_border border-primary-top p-4">
                                 <i class="lnr lnr-users"> </i>
-                                <h3 class="text-primary number">29.75 M</h3>
+                                <h3 class="text-primary number">@ViewBag.User</h3>
                                 <p class="stat-text">Total Users</p>
                             </div>
                         </div>

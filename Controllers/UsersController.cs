@@ -15,9 +15,11 @@ namespace MOTOSystem.Controllers
     {
         private moto_dbEntities db = new moto_dbEntities();
 
+       
         // GET: Users
         public ActionResult Index()
         {
+
             return View(db.Users.ToList());
         }
 
@@ -104,7 +106,7 @@ namespace MOTOSystem.Controllers
             return View(user);
         }
 
-        // POST: Users/Edit/5
+        // POST: Users/EditProfile/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,6 +118,37 @@ namespace MOTOSystem.Controllers
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("EditProfile");
+            }
+            return View(user);
+        }
+
+        // GET: Users/ChangePassword/5
+        public ActionResult ChangePassword(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            User user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        // POST: Users/ChangePassword/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode,u_pic")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("ChangePassword");
             }
             return View(user);
         }
