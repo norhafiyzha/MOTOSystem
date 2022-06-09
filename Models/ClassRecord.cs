@@ -16,19 +16,19 @@ namespace MOTOSystem.Models
 
     public partial class ClassRecord
     {
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Kelas")]
         public string class_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Masa Kelas")]
         public string class_time { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Pengajar")]
         public string class_teacher { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Pakej Kelas")]
         public Nullable<int> class_package { get; set; }
     

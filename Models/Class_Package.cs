@@ -22,14 +22,14 @@ namespace MOTOSystem.Models
             this.ClassRecords = new HashSet<ClassRecord>();
         }
 
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Pakej ID")]
         public int cp_id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Nama Pakej")]
         public string cp_name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Yuran Pakej")]
         public Nullable<double> cp_fees { get; set; }
     

@@ -16,28 +16,28 @@ namespace MOTOSystem.Models
 
     public partial class PerformanceReport
     {
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Bulan")]
         public Nullable<int> p_month { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Prestasi Pelajar")]
         public string student_performance { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Tarikh Kelas")]
         public Nullable<System.DateTime> class_date { get; set; }
 
-        [Required]
+        
         [DisplayName("Rujukan Kelas")]
         public string class_ref { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Status Prestasi")]
         public string p_status { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Id Laporan")]
         public int p_id { get; set; }
     

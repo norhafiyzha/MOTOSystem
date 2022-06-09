@@ -29,25 +29,27 @@ namespace MOTOSystem.Models
         [Required]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DataType(DataType.Password)]
         [Display(Name = "Kata Laluan")]
         public string u_password { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string u_email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Nama Pertama")]
 
         public string u_fname { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Nama Akhir")]
         public string u_lname { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Jawatan")]
         public string u_roles { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("No Telefon")]
         public string u_contact { get; set; }
 

@@ -16,20 +16,22 @@ namespace MOTOSystem.Models
 
     public partial class SalaryInvoice
     {
-        [Required]
-        [DisplayName("ID Pengguna")]
+        
+        [DisplayName("ID Elaun")]
         public int i_id { get; set; }
-        [Required]
-        [DisplayName("ID Pengguna")]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Amaun Elaun")]
         public Nullable<double> i_amount { get; set; }
-        [Required]
-        [DisplayName("ID Pengguna")]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Status")]
         public string i_status { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
-        [Required]
-        [DisplayName("ID Pengguna")]
+
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Bulan")]
         public Nullable<int> i_month { get; set; }
     
         public virtual User User { get; set; }
