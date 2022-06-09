@@ -22,7 +22,6 @@ namespace MOTOSystem.Controllers
             {
                 var userDetails = db.Users.Where(x => x.u_email == uModel.u_email && x.u_password == uModel.u_password).FirstOrDefault();
                 
-
                 if (userDetails == null)
                 {
                     uModel.LoginErrorMessage = " ID Pengguna atau Kata Laluan Tidak Sah";

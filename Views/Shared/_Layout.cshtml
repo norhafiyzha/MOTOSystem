@@ -109,12 +109,7 @@
                 <!-- notification menu start -->
                 <div class="menu-right">
                     <div class="navbar user-panel-top">
-                        <div class="search-box">
-                            <form action="#search-results.html" method="get">
-                                <input class="search-input" placeholder="Cari Disini" type="search" id="search">
-                                <button class="search-submit" value=""><span class="fa fa-search"></span></button>
-                            </form>
-                        </div>
+                       
                         <div class="user-dropdown-details d-flex">
                             <div class="profile_details_left">
                                 <ul class="nofitications-dropdown">
@@ -183,7 +178,7 @@
                                             </li>
                                             <li> <a href="@Url.Action("EditProfile", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Kemaskini Profil</a> </li>
                                             <li> <a href="@Url.Action("EditProfile", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Ubah Gambar Profil</a> </li>
-                                            <li> <a href="@Url.Action("Changepassword", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Ubah Kata Laluan</a> </li>
+                                            <li> <a href="@Url.Action("ChangePassword", "Users",new { id=@Session["userId"] })"><i class="lnr lnr-user"></i>Ubah Kata Laluan</a> </li>
                                             <li class="logout"> <a href="@Url.Action("Login","Login")"><i class="fa fa-power-off"></i> Logout</a> </li>
                                         </ul>
                                     </li>

@@ -32,6 +32,7 @@ namespace MOTOSystem.Models
 
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DataType(DataType.Password)]
+        [StringLength(20, ErrorMessage = "{0} hendaklah sekurang-kurangnya {2} karakter", MinimumLength = 6)]
         [Display(Name = "Kata Laluan")]
         public string u_password { get; set; }
 
@@ -63,7 +64,7 @@ namespace MOTOSystem.Models
         public string LoginErrorMessage { get; set; }
         public bool RememberMe { get; set; }
 
-      
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClassRecord> ClassRecords { get; set; }

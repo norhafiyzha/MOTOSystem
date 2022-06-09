@@ -96,3 +96,8 @@ D:\MOTOSystem\MOTOSystem\bin\Microsoft.Owin.xml
 D:\MOTOSystem\MOTOSystem\bin\Microsoft.Owin.Security.xml
 D:\MOTOSystem\MOTOSystem\bin\Microsoft.Owin.Security.Cookies.xml
 D:\MOTOSystem\MOTOSystem\bin\Microsoft.Owin.Security.OAuth.xml
+D:\MOTOSystem\MOTOSystem\bin\WebMatrix.Data.dll
+D:\MOTOSystem\MOTOSystem\bin\WebMatrix.WebData.dll
+D:\MOTOSystem\MOTOSystem\bin\WebMatrix.Data.xml
+D:\MOTOSystem\MOTOSystem\bin\WebMatrix.WebData.xml
+D:\MOTOSystem\MOTOSystem\bin\Microsoft.Web.Helpers.dll
