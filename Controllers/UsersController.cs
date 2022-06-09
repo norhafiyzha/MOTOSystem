@@ -115,7 +115,7 @@ namespace MOTOSystem.Controllers
             {
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("EditProfile");
             }
             return View(user);
         }

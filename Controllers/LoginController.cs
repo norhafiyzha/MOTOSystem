@@ -21,10 +21,7 @@ namespace MOTOSystem.Controllers
             using (moto_dbEntities db = new moto_dbEntities())
             {
                 var userDetails = db.Users.Where(x => x.u_email == uModel.u_email && x.u_password == uModel.u_password).FirstOrDefault();
-                Session["userID"] = userDetails.u_id;
-                Session["userRole"] = userDetails.u_roles;
-                Session["userName"] = userDetails.u_fname;
-                Session["userLname"] = userDetails.u_lname;
+                
 
                 if (userDetails == null)
                 {
@@ -35,14 +32,26 @@ namespace MOTOSystem.Controllers
                 {
                     if (userDetails.u_roles == "Admin")
                     {
+                        Session["userID"] = userDetails.u_id;
+                        Session["userRole"] = userDetails.u_roles;
+                        Session["userName"] = userDetails.u_fname;
+                        Session["userLname"] = userDetails.u_lname;
                         return RedirectToAction("ADashboard", "Home");
                     }
                     else if (userDetails.u_roles == "Ustaz" || userDetails.u_roles == "Ustazah")
                     {
+                        Session["userID"] = userDetails.u_id;
+                        Session["userRole"] = userDetails.u_roles;
+                        Session["userName"] = userDetails.u_fname;
+                        Session["userLname"] = userDetails.u_lname;
                         return RedirectToAction("TDashboard", "Home");
                     }
                     else
                     {
+                        Session["userID"] = userDetails.u_id;
+                        Session["userRole"] = userDetails.u_roles;
+                        Session["userName"] = userDetails.u_fname;
+                        Session["userLname"] = userDetails.u_lname;
                         return RedirectToAction("SDashboard", "Home");
                     }
                 }
