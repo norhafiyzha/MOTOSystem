@@ -4,47 +4,62 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>SalaryInvoice</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.i_amount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.i_amount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.i_status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.i_status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.i_month)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.i_month)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.User.u_password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.User.u_password)
-        </dd>
-
-    </dl>
+<div class="container-fluid content-top-gap">
+    <!-- forms 1 -->
+    <div class="card card_border py-2 mb-4">
+        <div class="cards__heading col-md-6">
+            <h3>Maklumat Invois <span></span></h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.i_id)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.i_id)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.User.u_id)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.User.u_id)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.i_month)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.i_month)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.i_amount)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.i_amount)</p>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            @Html.ActionLink("Kemaskini", "Edit", new { id = Model.i_id }, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //forms 1 -->
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.i_id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+    @Html.ActionLink("Kembali", "Index")
 </p>

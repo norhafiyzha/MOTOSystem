@@ -38,8 +38,9 @@
                 <h3>Rekod Keseluruhan Pengguna</h3>
             </div>
             <p>
-                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Pengguna Baharu", "Create", null, new { @class = "btn btn-primary" })
             </p>
+            <br />
             <table class="table">
                 <tr>
                     <th>
@@ -81,9 +82,9 @@
                         </td>
 
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.u_id }, new { @class = "btn btn-warning" }) 
-                            @Html.ActionLink("Details", "Details", new { id = item.u_id }, new { @class = "btn btn-info" }) 
-                            @Html.ActionLink("Delete", "Delete", new { id = item.u_id }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Kemaskini", "Edit", new { id = item.u_id }, new { @class = "btn btn-warning" }) 
+                            @Html.ActionLink("Maklumat", "Details", new { id = item.u_id }, new { @class = "btn btn-info" }) 
+                            @Html.ActionLink("Padam", "Delete", new { id = item.u_id }, new { @class = "btn btn-danger" })
 
                         </td>
                     </tr>

@@ -4,79 +4,71 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.u_password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.u_email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.u_fname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_fname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.u_lname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_lname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.u_roles)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_roles)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.u_contact)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_contact)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.u_passcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_passcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.u_pic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.u_pic)
-        </dd>
-
-    </dl>
+<div class="container-fluid content-top-gap">
+    <!-- forms 1 -->
+    <div class="card card_border py-2 mb-4">
+        <div class="cards__heading col-md-6">
+            <h3>Maklumat Pengguna <span></span></h3> 
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.u_id)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.u_id)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Nama Pengguna</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.u_fname) @Html.DisplayFor(model => model.u_lname)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.u_email)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.u_email)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.u_contact)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.u_contact)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.u_roles)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.u_roles)</p>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            @Html.ActionLink("Kemaskini", "Edit", new { id = Model.u_id }, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //forms 1 -->
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.u_id }) |
-    @Html.ActionLink("Back to List", "Index")
+    
+    @Html.ActionLink("Kembali", "Index")
 </p>
+
