@@ -66,7 +66,7 @@ namespace MengajiOneToOneSystem.Controllers
         // POST: PerformanceReports/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "p_month,u_id,student_performance,class_date,class_ref,p_status,p_id")] PerformanceReport performanceReport)
+        public ActionResult Create([Bind(Include = "p_month,u_id,student_performance,class_date,p_id")] PerformanceReport performanceReport)
         {
             if (ModelState.IsValid)
             {
@@ -134,6 +134,20 @@ namespace MengajiOneToOneSystem.Controllers
             db.PerformanceReports.Remove(performanceReport);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ReportPrint(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            PerformanceReport performanceReport = db.PerformanceReports.Find(id);
+            if (performanceReport == null)
+            {
+                return HttpNotFound();
+            }
+            return View(performanceReport);
         }
 
         protected override void Dispose(bool disposing)
