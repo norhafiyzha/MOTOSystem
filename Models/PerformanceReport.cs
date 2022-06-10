@@ -29,7 +29,7 @@ namespace MOTOSystem.Models
         [DisplayName("Tarikh Kelas")]
         public Nullable<System.DateTime> class_date { get; set; }
 
-        
+
         [DisplayName("Rujukan Kelas")]
         public string class_ref { get; set; }
 
@@ -40,7 +40,7 @@ namespace MOTOSystem.Models
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Id Laporan")]
         public int p_id { get; set; }
-    
+
         public virtual User User { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace MOTOSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode,u_pic")] User user)
+        public ActionResult Create([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace MOTOSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode,u_pic")] User user)
+        public ActionResult Edit([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -111,7 +111,7 @@ namespace MOTOSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditProfile([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode,u_pic")] User user)
+        public ActionResult EditProfile([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -142,7 +142,7 @@ namespace MOTOSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ChangePassword([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode,u_pic")] User user)
+        public ActionResult ChangePassword([Bind(Include = "u_id,u_password,u_email,u_fname,u_lname,u_roles,u_contact,u_passcode")] User user)
         {
             if (ModelState.IsValid)
             {

@@ -60,14 +60,13 @@
       <PropertyRef Name="u_id" />
     </Key>
     <Property Name="u_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="u_password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="u_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="u_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="u_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="u_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="u_roles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="u_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="u_passcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="u_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="u_passcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ClassRecords" Relationship="Self.FK_ClassRecord_User" FromRole="User" ToRole="ClassRecord" />
     <NavigationProperty Name="PerformanceReports" Relationship="Self.FK_PerformanceReport_User" FromRole="User" ToRole="PerformanceReport" />
     <NavigationProperty Name="SalaryInvoices" Relationship="Self.FK_SalaryInvoice_User" FromRole="User" ToRole="SalaryInvoice" />

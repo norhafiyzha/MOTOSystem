@@ -60,14 +60,13 @@
             <PropertyRef Name="u_id" />
           </Key>
           <Property Name="u_id" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="u_password" Type="varchar" MaxLength="20" />
+          <Property Name="u_password" Type="varchar(max)" />
           <Property Name="u_email" Type="varchar" MaxLength="50" />
           <Property Name="u_fname" Type="varchar" MaxLength="50" />
           <Property Name="u_lname" Type="varchar" MaxLength="50" />
           <Property Name="u_roles" Type="varchar" MaxLength="50" />
           <Property Name="u_contact" Type="varchar" MaxLength="50" />
-          <Property Name="u_passcode" Type="nvarchar" MaxLength="100" />
-          <Property Name="u_pic" Type="varchar(max)" />
+          <Property Name="u_passcode" Type="varchar(max)" />
         </EntityType>
         <Association Name="FK_ClassRecord_Class Package">
           <End Role="Class Package" Type="Self.Class Package" Multiplicity="0..1" />
@@ -205,14 +204,13 @@
             <PropertyRef Name="u_id" />
           </Key>
           <Property Name="u_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="u_password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="u_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="u_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="u_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="u_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="u_roles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="u_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="u_passcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="u_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="u_passcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ClassRecords" Relationship="Self.FK_ClassRecord_User" FromRole="User" ToRole="ClassRecord" />
           <NavigationProperty Name="PerformanceReports" Relationship="Self.FK_PerformanceReport_User" FromRole="User" ToRole="PerformanceReport" />
           <NavigationProperty Name="SalaryInvoices" Relationship="Self.FK_SalaryInvoice_User" FromRole="User" ToRole="SalaryInvoice" />
@@ -361,7 +359,6 @@
                 <ScalarProperty Name="u_roles" ColumnName="u_roles" />
                 <ScalarProperty Name="u_contact" ColumnName="u_contact" />
                 <ScalarProperty Name="u_passcode" ColumnName="u_passcode" />
-                <ScalarProperty Name="u_pic" ColumnName="u_pic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

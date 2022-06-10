@@ -55,14 +55,13 @@
       <PropertyRef Name="u_id" />
     </Key>
     <Property Name="u_id" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="u_password" Type="varchar" MaxLength="20" />
+    <Property Name="u_password" Type="varchar(max)" />
     <Property Name="u_email" Type="varchar" MaxLength="50" />
     <Property Name="u_fname" Type="varchar" MaxLength="50" />
     <Property Name="u_lname" Type="varchar" MaxLength="50" />
     <Property Name="u_roles" Type="varchar" MaxLength="50" />
     <Property Name="u_contact" Type="varchar" MaxLength="50" />
-    <Property Name="u_passcode" Type="nvarchar" MaxLength="100" />
-    <Property Name="u_pic" Type="varchar(max)" />
+    <Property Name="u_passcode" Type="varchar(max)" />
   </EntityType>
   <Association Name="FK_ClassRecord_Class Package">
     <End Role="Class Package" Type="Self.Class Package" Multiplicity="0..1" />

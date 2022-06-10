@@ -67,7 +67,6 @@
           <ScalarProperty Name="u_roles" ColumnName="u_roles" />
           <ScalarProperty Name="u_contact" ColumnName="u_contact" />
           <ScalarProperty Name="u_passcode" ColumnName="u_passcode" />
-          <ScalarProperty Name="u_pic" ColumnName="u_pic" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

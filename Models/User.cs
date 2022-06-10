@@ -55,11 +55,7 @@ namespace MOTOSystem.Models
         public string u_contact { get; set; }
 
         public string u_passcode { get; set; }
-        
-        [DisplayName("Gambar Profil")]
-        public string u_pic { get; set; }
 
-        public HttpPostedFileBase ImageFile { get; set; }
 
         public string LoginErrorMessage { get; set; }
         public bool RememberMe { get; set; }

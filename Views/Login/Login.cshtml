@@ -18,6 +18,11 @@
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="~/assets/css/style1.css" type="text/css" media="all" />
+    <style>
+        .text-danger {
+            color: #ff4f81 !important;
+        }
+    </style>
 
 </head>
 <body>
@@ -37,14 +42,14 @@
                                     <i class="fas fa-user"></i>
                                 </div>
                                 @Html.TextBoxFor(model => model.u_email, new { @class = "form-control", @placeholder = "Email Pengguna" })
-                                @Html.ValidationMessageFor(model => model.u_email)
+                                @Html.ValidationMessageFor(model => model.u_email,"", new { @class = "text-danger" })
                             </div>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fas fa-key"></i>
                                 </div>
                                 @Html.PasswordFor(model => model.u_password, new { @class = "form-control", @placeholder = "Kata Laluan" })
-                                @Html.ValidationMessageFor(model => model.u_password)
+                                @Html.ValidationMessageFor(model => model.u_password,"", new { @class = "text-danger" })
                             </div>
                             <div>
                                 <td colspan="2">
