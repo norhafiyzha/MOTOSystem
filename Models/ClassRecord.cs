@@ -31,7 +31,7 @@ namespace MOTOSystem.Models
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Pakej Kelas")]
         public Nullable<int> class_package { get; set; }
-
+    
         public virtual Class_Package Class_Package1 { get; set; }
         public virtual User User { get; set; }
     }

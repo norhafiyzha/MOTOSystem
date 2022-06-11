@@ -19,19 +19,16 @@ namespace MOTOSystem.Models
         [Required]
         [DisplayName("ID Invois")]
         public int i_id { get; set; }
-
         [Required]
         [DisplayName("Jumlah Elaun")]
-        public Nullable<double> i_amount { get; set; }
 
+        public Nullable<double> i_amount { get; set; }
         [Required]
         [DisplayName("Status")]
         public string i_status { get; set; }
-
         [Required]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
-
         [Required]
         [DisplayName("Bulan")]
         public Nullable<int> i_month { get; set; }

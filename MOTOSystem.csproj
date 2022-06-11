@@ -213,11 +213,14 @@
     <Content Include="assets\images\avatar5.jpg" />
     <Content Include="assets\images\avatar6.jpg" />
     <Content Include="assets\images\avatar7.jpg" />
+    <Content Include="assets\images\back.jpg" />
+    <Content Include="assets\images\backg.jpg" />
     <Content Include="assets\images\cart.jpg" />
     <Content Include="assets\images\content.jpg" />
     <Content Include="assets\images\dashboard.jpg" />
     <Content Include="assets\images\desk.jpg" />
     <Content Include="assets\images\down.png" />
+    <Content Include="assets\images\islamic-star-ornament-grey-background-vector-illustration-101992358.jpg" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\images\people1.jpg" />
     <Content Include="assets\images\people2.jpg" />
