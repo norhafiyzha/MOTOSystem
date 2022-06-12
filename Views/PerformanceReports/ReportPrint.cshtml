@@ -1,48 +1,58 @@
-﻿@model MOTOSystem.Models.PerformanceReport
+@model MOTOSystem.Models.PerformanceReport
 
 @{
     ViewBag.Title = "ReportPrint";
 }
 
+<header>
+    <h1>Performance Report</h1>
+    <link rel="stylesheet" href="style.css">
+</header>
+<article>
+    <h1>Recipient</h1>
+    <address contenteditable>
+        <p>@Html.DisplayFor(model => model.User.u_fname)<br>@Html.DisplayFor(model => model.User.u_lname)</p>
+        <p>@Html.DisplayFor(model => model.u_id)</p>
+    </address>
+    <table class="inventory">
+        <thead>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.p_month)
+                </dt>
 
-<html>
-<head>
+                <dd>
+                    @Html.DisplayFor(model => model.p_month)
+                </dd>
 
-    <meta charset="utf-8">
-    <title>Performance Report</title>
-    <link rel="stylesheet" href="~/assets/css/Style2.css">
+                <dt>
+                    @Html.DisplayNameFor(model => model.student_performance)
+                </dt>
 
-</head>
-<body>
-    <header>
-        <h1>Performance Report</h1>
-    </header>
-    <article>
-        <h1>@Html.DisplayFor(model => model.User.u_fname) + " "+ @Html.DisplayFor(model => model.User.u_lname) </h1>
-        <address contenteditable>
-            <p>@Html.DisplayFor(model => model.p_month)<br>@Html.DisplayFor(model => model.class_date)</p>
-        </address>
-        <dl class="dl-horizontal">
-            <dt>
-                Class Status
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.student_performance)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.p_status)
-            </dd>
-            <dt>
-                Teacher Report
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.class_date)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.student_performance)
-            </dd>
-        </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.class_date)
+                </dd>
 
+                <dt>
+                    @Html.DisplayNameFor(model => model.p_status)
+                </dt>
 
+                <dd>
+                    @Html.DisplayFor(model => model.p_status)
+                </dd>
+            </dl>
+        </thead>
 
-    </article>
-    <button onclick="window.print()">Print Report</button>
+    </table>
+    <button onclick="window.print()">Print</button>
 
-</body>
-</html>
+</article>
+

@@ -1,4 +1,6 @@
-﻿* {
+﻿/* reset */
+
+* {
     border: 0;
     box-sizing: content-box;
     color: inherit;
@@ -63,9 +65,6 @@ th, td {
     position: relative;
     text-align: left;
 }
-
-
-
 
 th, td {
     border-radius: 0.25em;

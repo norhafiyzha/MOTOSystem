@@ -35,14 +35,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.class_ref)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.class_ref)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.p_status)
         </dt>
 
@@ -54,5 +46,20 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        @Html.EditorFor(model => model.p_status, "Approve")
+        @Html.HiddenFor(model => model.class_ref)
+        @Html.HiddenFor(model => model.class_date)
+        @Html.HiddenFor(model => model.p_id)
+        @Html.HiddenFor(model => model.p_month)
+        @Html.HiddenFor(model => model.u_id)
+        <input type="submit" value="Save" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    }
+
 </p>
