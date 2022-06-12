@@ -58,7 +58,7 @@
                                     <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>
                                 </ul>
                             </li>
-                            <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
+                            <li><a href="@Url.Action("Index","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
                             <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Pengurusan Gaji</span></a></li>
                             <li><a href="@Url.Action("Index","ClassPackage")"><i class="fa fa-cogs"></i> <span>Pengurusan Pakej</span></a></li>
                         }
@@ -72,7 +72,7 @@
                             <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
                         }
-                        else
+                        @if (Session["userRole"].ToString() == "Pelajar")
                         {
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Prestasi Pelajar</span></a></li>
                         }

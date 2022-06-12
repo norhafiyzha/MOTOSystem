@@ -59,7 +59,16 @@ namespace MengajiOneToOneSystem.Controllers
         // GET: PerformanceReports/Create
         public ActionResult Create()
         {
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password");
+            var clients = db.Users
+                .Select(s => new
+                {
+                    Text = s.u_id + " - " + s.u_fname,
+                    Value = s.u_id
+                })
+                .ToList();
+
+            ViewBag.u_id = new SelectList(clients, "Value", "Text");
+            //ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password");
             return View();
         }
 
