@@ -69,7 +69,7 @@ namespace MengajiOneToOneSystem.Controllers
                 .ToList();
 
             ViewBag.u_id = new SelectList(clients, "Value", "Text");
-            //ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password");
+            //ViewBag.u_id = new SelectList(db.Users, "u_id");
             return View();
         }
 
@@ -80,12 +80,21 @@ namespace MengajiOneToOneSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                performanceReport.p_status = "n/a";
                 db.PerformanceReports.Add(performanceReport);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password", performanceReport.u_id);
+            var clients = db.Users
+                .Select(s => new
+                {
+                    Text = s.u_id + " - " + s.u_fname,
+                    Value = s.u_id
+                })
+                .ToList();
+
+            ViewBag.u_id = new SelectList(clients, "Value", "Text");
             return View(performanceReport);
         }
 
@@ -101,7 +110,15 @@ namespace MengajiOneToOneSystem.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password", performanceReport.u_id);
+            var clients = db.Users
+                .Select(s => new
+                {
+                    Text = s.u_id + " - " + s.u_fname,
+                    Value = s.u_id
+                })
+                .ToList();
+
+            ViewBag.u_id = new SelectList(clients, "Value", "Text");
             return View(performanceReport);
         }
 
@@ -116,7 +133,15 @@ namespace MengajiOneToOneSystem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password", performanceReport.u_id);
+            var clients = db.Users
+                .Select(s => new
+                {
+                    Text = s.u_id + " - " + s.u_fname,
+                    Value = s.u_id
+                })
+                .ToList();
+
+            ViewBag.u_id = new SelectList(clients, "Value", "Text");
             return View(performanceReport);
         }
 

@@ -30,7 +30,6 @@ namespace MOTOSystem.Models
         public Nullable<System.DateTime> class_date { get; set; }
         [DisplayName("Rujukan Kelas")]
         public string class_ref { get; set; }
-        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Status Prestasi")]
         public string p_status { get; set; }
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
