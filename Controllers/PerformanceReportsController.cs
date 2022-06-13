@@ -18,13 +18,13 @@ namespace MengajiOneToOneSystem.Controllers
         // GET: PerformanceReports
         public ActionResult Index()
         {
-            var performanceReports = db.PerformanceReports.Include(p => p.User);
+            var performanceReports = db.PerformanceReports;
             return View(performanceReports.ToList());
         }
 
         public ActionResult IndexTeacher()
         {
-            var performanceReports = db.PerformanceReports.Include(p => p.User);
+            var performanceReports = db.PerformanceReports;
             return View(performanceReports.ToList());
         }
 
@@ -65,9 +65,7 @@ namespace MengajiOneToOneSystem.Controllers
                 {
                     Text = s.u_id + " - " + s.u_fname,
                     Value = s.u_id
-                })
-                .ToList();
-
+                }).ToList(); 
             ViewBag.u_id = new SelectList(clients, "Value", "Text");
             //ViewBag.u_id = new SelectList(db.Users, "u_id");
             return View();
@@ -83,7 +81,7 @@ namespace MengajiOneToOneSystem.Controllers
                 performanceReport.p_status = "n/a";
                 db.PerformanceReports.Add(performanceReport);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexTeacher");
             }
 
             var clients = db.Users
@@ -131,7 +129,7 @@ namespace MengajiOneToOneSystem.Controllers
             {
                 db.Entry(performanceReport).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexTeacher");
             }
             var clients = db.Users
                 .Select(s => new
@@ -168,27 +166,19 @@ namespace MengajiOneToOneSystem.Controllers
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);
             db.PerformanceReports.Remove(performanceReport);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexTeacher");
         }
 
-        public ActionResult ReportPrint()
-        {
 
-            return View();
-        }
-
-        [HttpPost]
+        [HttpPost, ActionName("DetailsStudent")]
         [ValidateAntiForgeryToken]
-        public ActionResult DetailsStudent([Bind(Include = "p_month,u_id,student_performance,class_date,class_ref,p_status,p_id")] PerformanceReport performanceReport)
+        public ActionResult Approve(int id)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(performanceReport).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password", performanceReport.u_id);
-            return View(performanceReport); 
+            PerformanceReport performanceReport = db.PerformanceReports.Find(id);
+            performanceReport.p_status = "Luluskan";
+            db.Entry(performanceReport).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("IndexTeacher");
         }
 
         protected override void Dispose(bool disposing)
