@@ -127,6 +127,7 @@ namespace MengajiOneToOneSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                //db.PerformanceReports.Add(performanceReport);
                 db.Entry(performanceReport).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("IndexTeacher");
