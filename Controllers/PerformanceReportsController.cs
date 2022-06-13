@@ -178,7 +178,7 @@ namespace MengajiOneToOneSystem.Controllers
             performanceReport.p_status = "Luluskan";
             db.Entry(performanceReport).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("IndexTeacher");
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

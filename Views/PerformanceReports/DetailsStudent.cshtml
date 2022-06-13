@@ -51,10 +51,19 @@
 
                             <br />
                             <br />
-                            <p>
-                                @Html.ActionLink("Kembali", "IndexTeacher") |
-                                <button onclick="window.print()">Print</button>
-                            </p>
+                            
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Luluskan" class="btn btn-default" /> |
+                            @Html.ActionLink("Kembali", "Index")|
+                            <button onclick="window.print()">Print</button>
+                        </div>
+                                }
+ 
+                            
                         </div>
                     </div>
                 </div>
