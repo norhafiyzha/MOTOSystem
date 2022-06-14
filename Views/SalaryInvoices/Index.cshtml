@@ -47,7 +47,7 @@
                         @Html.DisplayNameFor(model => model.i_id)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.User.u_id)
+                        @Html.DisplayNameFor(model => model.User.u_fname)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.i_amount)
@@ -69,7 +69,7 @@
                             @Html.DisplayFor(modelItem => item.i_id)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.User.u_id)
+                            @Html.DisplayFor(modelItem => item.User.u_roles) @Html.DisplayFor(modelItem => item.User.u_fname) @Html.DisplayFor(modelItem => item.User.u_lname)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.i_amount)

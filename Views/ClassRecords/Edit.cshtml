@@ -33,9 +33,9 @@
                         @Html.LabelFor(model => model.class_time, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.DropDownList("class_time", new List<SelectListItem>{
-                                               new SelectListItem{ Text="Pagi", Value = "Pagi" },
-                                               new SelectListItem{ Text="Petang", Value = "Petang" },
-                                               new SelectListItem{ Text="Malam", Value = "Malam" }}, htmlAttributes: new { @class = "form-control" })
+                                               new SelectListItem{ Text="30 Minit", Value = "30 Minit" },
+                                               new SelectListItem{ Text="60 Minit", Value = "60 Minit" },
+                                               new SelectListItem{ Text="120 Minit", Value = "120 Minit" }}, htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.class_time, "", new { @class = "text-danger" })
                         </div>
                     </div>

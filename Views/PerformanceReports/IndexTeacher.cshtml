@@ -47,9 +47,6 @@
                         @Html.DisplayNameFor(model => model.p_month)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.student_performance)
-                    </th>
-                    <th>
                         @Html.DisplayNameFor(model => model.class_date)
                     </th>
                     <th>
@@ -71,9 +68,6 @@
                             @Html.DisplayFor(modelItem => item.p_month)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.student_performance)
-                        </td>
-                        <td>
                             @Html.DisplayFor(modelItem => item.class_date)
                         </td>
                         <td>
@@ -86,9 +80,9 @@
                             @Html.DisplayFor(modelItem => item.u_id)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.p_id }) |
-                            @Html.ActionLink("Butiran", "Details", new { id = item.p_id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.p_id })
+                            @Html.ActionLink("Kemaskini", "Edit", new { id = item.p_id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Maklumat", "Details", new { id = item.p_id }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Padam", "Delete", new { id = item.p_id }, new { @class = "btn btn-danger" })
                         </td>
                     </tr>
                 }

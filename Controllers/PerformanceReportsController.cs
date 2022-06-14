@@ -80,7 +80,7 @@ namespace MengajiOneToOneSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                performanceReport.p_status = "n/a";
+                performanceReport.p_status = "Pending";
                 db.PerformanceReports.Add(performanceReport);
                 db.SaveChanges();
                 return RedirectToAction("IndexTeacher");

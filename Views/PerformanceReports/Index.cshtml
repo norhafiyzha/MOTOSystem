@@ -44,9 +44,6 @@
                         @Html.DisplayNameFor(model => model.p_month)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.student_performance)
-                    </th>
-                    <th>
                         @Html.DisplayNameFor(model => model.class_date)
                     </th>
                     <th>
@@ -69,9 +66,6 @@
                             @Html.DisplayFor(modelItem => item.p_month)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.student_performance)
-                        </td>
-                        <td>
                             @Html.DisplayFor(modelItem => item.class_date)
                         </td>
                         <td>
@@ -84,7 +78,7 @@
                             @Html.DisplayFor(modelItem => item.u_id)
                         </td>
                         <td>
-                            @Html.ActionLink("Details", "DetailsStudent", new { id = item.p_id })
+                            @Html.ActionLink("Details", "DetailsStudent", new { id = item.p_id }, new { @class = "btn btn-info" })
                         </td>
                     </tr>
                 }

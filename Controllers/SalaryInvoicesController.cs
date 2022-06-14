@@ -39,7 +39,7 @@ namespace MOTOSystem.Controllers
         // GET: SalaryInvoices/Create
         public ActionResult Create()
         {
-            var clients = db.Users
+            var clients = db.Users.Where(r => r.u_roles == "Ustaz" || r.u_roles == "Ustazah")
                .Select(s => new
                {
                    Text = s.u_id + " - " + s.u_fname,
@@ -82,7 +82,15 @@ namespace MOTOSystem.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password", salaryInvoice.u_id);
+            var clients = db.Users.Where(r => r.u_roles == "Ustaz" || r.u_roles == "Ustazah")
+               .Select(s => new
+               {
+                   Text = s.u_id + " - " + s.u_fname,
+                   Value = s.u_id
+               })
+               .ToList();
+
+            ViewBag.u_id = new SelectList(clients, "Value", "Text");
             return View(salaryInvoice);
         }
 

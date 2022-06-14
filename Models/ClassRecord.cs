@@ -24,7 +24,7 @@ namespace MOTOSystem.Models
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
-        [DisplayName("Waktu Kelas")]
+        [DisplayName("Durasi Kelas")]
         public string class_time { get; set; }
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Pengajar")]
