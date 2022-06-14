@@ -42,7 +42,7 @@ namespace MOTOSystem.Controllers
             var clients = db.Users.Where(r => r.u_roles == "Pelajar")
                 .Select(s => new
                 {
-                    Text = s.u_id+ " - " + s.u_fname,
+                    Text = s.u_id + " - " + s.u_fname,
                     Value = s.u_id
                 })
                 .ToList();
@@ -50,7 +50,7 @@ namespace MOTOSystem.Controllers
             var clients2 = db.Users.Where(p => p.u_roles == "Ustaz" || p.u_roles == "Ustazah")
                 .Select(s => new
                 {
-                    Text1 = s.u_id+ " - " + s.u_fname,
+                    Text1 = s.u_id + " - " + s.u_fname,
                     Value1 = s.u_id
                 })
                 .ToList();
@@ -58,7 +58,7 @@ namespace MOTOSystem.Controllers
             ViewBag.u_id = new SelectList(clients, "Value", "Text");
             ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name");
             ViewBag.class_teacher = new SelectList(clients2, "Value1", "Text1");
-           // ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id");
+            // ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id");
             return View();
         }
 
@@ -77,10 +77,28 @@ namespace MOTOSystem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            var clients = db.Users.Where(r => r.u_roles == "Pelajar")
+                .Select(s => new
+                {
+                    Text = s.u_id + " - " + s.u_fname,
+                    Value = s.u_id
+                })
+                .ToList();
 
-            ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name", classRecord.class_package);
-            ViewBag.class_teacher = new SelectList(db.Class_Packages, "u_fname", "u_fname", classRecord.class_teacher);
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id", classRecord.u_id);
+            var clients2 = db.Users.Where(p => p.u_roles == "Ustaz" || p.u_roles == "Ustazah")
+                .Select(s => new
+                {
+                    Text1 = s.u_id + " - " + s.u_fname,
+                    Value1 = s.u_id
+                })
+                .ToList();
+
+            ViewBag.u_id = new SelectList(clients, "Value", "Text");
+            ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name");
+            ViewBag.class_teacher = new SelectList(clients2, "Value1", "Text1");
+            //ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name", classRecord.class_package);
+            //ViewBag.class_teacher = new SelectList(db.Class_Packages, "u_fname", "u_fname", classRecord.class_teacher);
+            //ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id", classRecord.u_id);
             return View(classRecord);
         }
 
@@ -96,16 +114,23 @@ namespace MOTOSystem.Controllers
             {
                 return HttpNotFound();
             }
+            var clients = db.Users.Where(r => r.u_roles == "Pelajar")
+                .Select(s => new
+                {
+                    Text = s.u_id + " - " + s.u_fname,
+                    Value = s.u_id
+                })
+                .ToList();
 
             var clients2 = db.Users.Where(p => p.u_roles == "Ustaz" || p.u_roles == "Ustazah")
                 .Select(s => new
                 {
-                    Text1 = s.u_id+ " - " + s.u_fname,
+                    Text1 = s.u_id + " - " + s.u_fname,
                     Value1 = s.u_id
                 })
                 .ToList();
+            ViewBag.u_id = new SelectList(clients, "Value", "Text");
             ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name", classRecord.class_package);
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id", classRecord.u_id);
             ViewBag.class_teacher = new SelectList(clients2, "Value1", "Text1");
             ViewBag.class_time = new SelectList(db.ClassRecords, "class_time", "class_time", classRecord.class_time);
             return View(classRecord);

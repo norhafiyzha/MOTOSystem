@@ -18,6 +18,7 @@ namespace MOTOSystem.Models
     {
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Kelas")]
+        [StringLength(10, ErrorMessage = "{0} hendaklah sekurang-kurangnya {2} karakter", MinimumLength = 3)]
         public string class_id { get; set; }
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Pengguna")]
