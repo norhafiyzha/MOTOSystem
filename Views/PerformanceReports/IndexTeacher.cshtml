@@ -21,8 +21,9 @@
         <div class="card card_border py-2 mb-4">
             <h1>Rekod Prestasi Pelajar</h1>
             <p>
-                @Html.ActionLink("Create New", "Create", new { @class = "btn btn-info" })
+                @Html.ActionLink("Cipta Baru", "Create",null, new { @class = "btn btn-primary" })
             </p>
+            <br />
             <table class="table">
                 <tr>
                     <th>
@@ -69,7 +70,7 @@
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.p_id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.p_id }) |
+                            @Html.ActionLink("Butiran", "Details", new { id = item.p_id }) |
                             @Html.ActionLink("Delete", "Delete", new { id = item.p_id })
                         </td>
                     </tr>
