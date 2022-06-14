@@ -3,76 +3,74 @@
 @{
     ViewBag.Title = "Delete";
 }
-
-<div class="container-fluid content-top-gap">
-    <!-- forms 1 -->
-    <div class="card card_border py-2 mb-4">
-        <div class="cards__heading">
-            <h3>Hapus Pengguna <span></span></h3>
-            <br />
-            <h5>Anda pasti ingin menghapuskan data pengguna tersebut?</h5>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="tab-content profile-tab" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>@Html.DisplayNameFor(model => model.u_id)</label>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid content-top-gap">
+        <!-- forms 1 -->
+        <div class="card card_border py-2 mb-4">
+            <div class="cards__heading">
+                <h3>Hapus Pengguna <span></span></h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@Html.DisplayNameFor(model => model.u_id)</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Html.DisplayFor(model => model.u_id)</p>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <p>@Html.DisplayFor(model => model.u_id)</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nama Pengguna</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Html.DisplayFor(model => model.u_fname) @Html.DisplayFor(model => model.u_lname)</p>
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@Html.DisplayNameFor(model => model.u_email)</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Html.DisplayFor(model => model.u_email)</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@Html.DisplayNameFor(model => model.u_contact)</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Html.DisplayFor(model => model.u_contact)</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>@Html.DisplayNameFor(model => model.u_roles)</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@Html.DisplayFor(model => model.u_roles)</p>
+                                    </div>
+                                </div>
+                                <br />
+                                <input type="submit" value="Padam" class="btn btn-danger" onclick="return confirm('Anda yakin ingin hapuskan data pengguna tersebut?');" />
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Nama Pengguna</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>@Html.DisplayFor(model => model.u_fname) @Html.DisplayFor(model => model.u_lname)</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>@Html.DisplayNameFor(model => model.u_email)</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>@Html.DisplayFor(model => model.u_email)</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>@Html.DisplayNameFor(model => model.u_contact)</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>@Html.DisplayFor(model => model.u_contact)</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>@Html.DisplayNameFor(model => model.u_roles)</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>@Html.DisplayFor(model => model.u_roles)</p>
-                                </div>
-                            </div>
-                            <br />
-                            <input type="submit" value="Padam" class="btn btn-danger" onclick="return confirm('Anda yakin ingin hapuskan data pengguna tersebut?');" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- //forms 1 -->
     </div>
-    <!-- //forms 1 -->
-</div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+
 
     <div class="form-actions no-color">
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Kembali", "Index")
     </div>
 }

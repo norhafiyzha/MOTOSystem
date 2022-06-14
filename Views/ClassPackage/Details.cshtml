@@ -4,31 +4,48 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Class_Package</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.cp_name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cp_name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cp_fees)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cp_fees)
-        </dd>
-
-    </dl>
+<div class="container-fluid content-top-gap">
+    <!-- forms 1 -->
+    <div class="card card_border py-2 mb-4">
+        <div class="cards__heading col-md-6">
+            <h3>Maklumat Pengguna <span></span></h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.cp_name)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.cp_name)</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>@Html.DisplayNameFor(model => model.cp_fees)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>@Html.DisplayFor(model => model.cp_fees)</p>
+                                </div>
+                            </div>
+                            
+                            <br />
+                            <br />
+                            @Html.ActionLink("Kemaskini", "Edit", new { id = Model.cp_id }, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //forms 1 -->
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.cp_id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+    @Html.ActionLink("Kembali", "Index")
 </p>
