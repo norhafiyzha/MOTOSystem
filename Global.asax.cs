@@ -20,6 +20,7 @@ namespace MOTOSystem
 
         protected void Application_BeginRequest()
         {
+            //NOTE: Stopping IE from being a caching whore
             HttpContext.Current.Response.Cache.SetAllowResponseInBrowserHistory(false);
             HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
             HttpContext.Current.Response.Cache.SetNoStore();
