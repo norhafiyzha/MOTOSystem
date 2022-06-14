@@ -4,13 +4,28 @@
     ViewBag.Title = "IndexTeacher";
 }
 
-<h2>Student Performance Report</h2>
 <div class="container-fluid content-top-gap">
 
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb" class="mb-4">
         <ol class="breadcrumb my-breadcrumb">
-            <li class="breadcrumb-item"><a href="@Url.Action("TDashboard","Users")">Utama</a></li>
+            @if (Session["userRole"].ToString() == "Admin")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("ADashboard", "Home")">Utama</a></li>
+            }
+            @if (Session["userRole"].ToString() == "Ustaz")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("TDashboard", "Home")">Utama</a></li>
+            }
+            @if (Session["userRole"].ToString() == "Ustazah")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("TDashboard", "Home")">Utama</a></li>
+            }
+            @if (Session["userRole"].ToString() == "Pelajar")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("SDashboard", "Home")">Utama</a></li>
+            }
+
             <li class="breadcrumb-item active" aria-current="page">Rekod Prestasi Pelajar</li>
         </ol>
     </nav>
@@ -19,9 +34,11 @@
     <section class="forms">
         <!-- forms 2 -->
         <div class="card card_border py-2 mb-4">
-            <h1>Rekod Prestasi Pelajar</h1>
+            <div class="cards__heading">
+                <h3>Rekod Prestasi Pelajar</h3>
+            </div>
             <p>
-                @Html.ActionLink("Cipta Baru", "Create",null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Cipta Rekod Prestasi", "Create", null, new { @class = "btn btn-primary" })
             </p>
             <br />
             <table class="table">

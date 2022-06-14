@@ -4,13 +4,28 @@
     ViewBag.Title = "IndexTeacher";
 }
 
-<h2>Student Performance Report</h2>
 <div class="container-fluid content-top-gap">
 
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb" class="mb-4">
         <ol class="breadcrumb my-breadcrumb">
-            <li class="breadcrumb-item"><a href="@Url.Action("SDashboard","Users")">Utama</a></li>
+            @if (Session["userRole"].ToString() == "Admin")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("ADashboard", "Home")">Utama</a></li>
+            }
+            @if (Session["userRole"].ToString() == "Ustaz")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("TDashboard", "Home")">Utama</a></li>
+            }
+            @if (Session["userRole"].ToString() == "Ustazah")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("TDashboard", "Home")">Utama</a></li>
+            }
+            @if (Session["userRole"].ToString() == "Pelajar")
+            {
+                <li class="breadcrumb-item"><a href="@Url.Action("SDashboard", "Home")">Utama</a></li>
+            }
+
             <li class="breadcrumb-item active" aria-current="page">Rekod Prestasi Pelajar</li>
         </ol>
     </nav>
@@ -19,7 +34,10 @@
     <section class="forms">
         <!-- forms 2 -->
         <div class="card card_border py-2 mb-4">
-            <h1>Rekod Prestasi Pelajar</h1>
+            <div class="cards__heading">
+                <h3>Rekod Prestasi</h3>
+            </div>
+            <br />
             <table class="table">
                 <tr>
                     <th>
@@ -43,9 +61,9 @@
                     <th></th>
                 </tr>
 
-                @foreach (var item in Model )
+                @foreach (var item in Model)
                 {
-                  
+
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.p_month)
@@ -66,7 +84,7 @@
                             @Html.DisplayFor(modelItem => item.u_id)
                         </td>
                         <td>
-                            @Html.ActionLink("Details", "DetailsStudent", new { id = item.p_id }) 
+                            @Html.ActionLink("Details", "DetailsStudent", new { id = item.p_id })
                         </td>
                     </tr>
                 }
