@@ -110,7 +110,7 @@ namespace MengajiOneToOneSystem.Controllers
             {
                 return HttpNotFound();
             }
-            var clients = db.Users
+            var clients = db.Users.Where(r => r.u_roles == "Pelajar")
                 .Select(s => new
                 {
                     Text = s.u_id + " - " + s.u_fname,
@@ -134,7 +134,7 @@ namespace MengajiOneToOneSystem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("IndexTeacher");
             }
-            var clients = db.Users
+            var clients = db.Users.Where(r => r.u_roles == "Pelajar")
                 .Select(s => new
                 {
                     Text = s.u_id + " - " + s.u_fname,
