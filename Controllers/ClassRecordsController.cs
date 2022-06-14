@@ -49,6 +49,7 @@ namespace MOTOSystem.Controllers
 
             ViewBag.u_id = new SelectList(clients, "Value", "Text");
             ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name");
+            ViewBag.class_teacher = new SelectList(db.Users, "u_fname", "u_fname");
            // ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id");
             return View();
         }
@@ -60,6 +61,8 @@ namespace MOTOSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "class_id,u_id,class_time,class_teacher,class_package")] ClassRecord classRecord)
         {
+            List<ClassRecord> teacher = new List<ClassRecord>();
+
             if (ModelState.IsValid)
             {
                 db.ClassRecords.Add(classRecord);
@@ -68,6 +71,7 @@ namespace MOTOSystem.Controllers
             }
 
             ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name", classRecord.class_package);
+            ViewBag.class_teacher = new SelectList(db.Class_Packages, "u_fname", "u_fname", classRecord.class_teacher);
             ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id", classRecord.u_id);
             return View(classRecord);
         }
@@ -85,7 +89,9 @@ namespace MOTOSystem.Controllers
                 return HttpNotFound();
             }
             ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name", classRecord.class_package);
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password", classRecord.u_id);
+            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id", classRecord.u_id);
+            ViewBag.class_teacher = new SelectList(db.Users, "u_fname", "u_fname");
+            ViewBag.class_time = new SelectList(db.ClassRecords, "class_time", "class_time", classRecord.class_time);
             return View(classRecord);
         }
 
@@ -103,7 +109,7 @@ namespace MOTOSystem.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.class_package = new SelectList(db.Class_Packages, "cp_id", "cp_name", classRecord.class_package);
-            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password", classRecord.u_id);
+            ViewBag.u_id = new SelectList(db.Users, "u_id", "u_id", classRecord.u_id);
             return View(classRecord);
         }
 
