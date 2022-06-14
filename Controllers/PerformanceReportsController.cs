@@ -18,7 +18,8 @@ namespace MengajiOneToOneSystem.Controllers
         // GET: PerformanceReports
         public ActionResult Index()
         {
-            var performanceReports = db.PerformanceReports.Where(s => s.u_id == Session["userID"].ToString());
+            var ID = Session["UserID"];
+            var performanceReports = db.PerformanceReports.Where(r => r.u_id == ID);
             return View(performanceReports.ToList());
         }
 
