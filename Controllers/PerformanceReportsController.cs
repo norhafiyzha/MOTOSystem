@@ -61,7 +61,8 @@ namespace MengajiOneToOneSystem.Controllers
         // GET: PerformanceReports/Create
         public ActionResult Create()
         {
-            var clients = db.Users
+            //var client2 = db.Users.Where(r => r.u_roles == "Pelajar");
+            var clients = db.Users.Where(r => r.u_roles == "Pelajar")
                 .Select(s => new
                 {
                     Text = s.u_id + " - " + s.u_fname,
