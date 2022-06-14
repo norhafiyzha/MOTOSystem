@@ -100,6 +100,8 @@ namespace MOTOSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                var unhashedPass = user.u_password;
+                user.u_password = HashPassword(unhashedPass);
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -130,6 +132,7 @@ namespace MOTOSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("EditProfile");
@@ -161,8 +164,8 @@ namespace MOTOSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var unhashedPass = user.u_password;
-                //user.u_password = HashPassword(unhashedPass);
+                var unhashedPass = user.u_password;
+                user.u_password = HashPassword(unhashedPass);
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("ChangePassword");

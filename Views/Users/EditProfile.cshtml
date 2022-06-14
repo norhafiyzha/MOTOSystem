@@ -45,6 +45,7 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.u_id)
                 @Html.HiddenFor(model => model.u_password)
+                @Html.HiddenFor(model => model.u_roles)
                 <div class="card-body">
                     <form action="#" method="post" style="margin: auto; width: 220px;">
                         <div class="form-row">

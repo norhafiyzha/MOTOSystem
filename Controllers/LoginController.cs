@@ -9,20 +9,29 @@ using System.Web.Security;
 
 namespace MOTOSystem.Controllers
 {
+    
     public class LoginController : Controller
     {
+        
         // GET: Login
         public ActionResult Login()
         {
             return View();
         }
         [HttpPost]
+        
         public ActionResult Authorize(MOTOSystem.Models.User uModel)
         {
             using (moto_dbEntities db = new moto_dbEntities())
             {
                 var userDetails = db.Users.Where(x => x.u_email == uModel.u_email).FirstOrDefault();
                 var PasswordCorrect = VerifyHashedPassword(userDetails.u_password, uModel.u_password);
+
+                if (PasswordCorrect == false)
+                {
+                    uModel.LoginErrorMessage = "Pengguna tidak dijumpa";
+                    return View("Login", uModel);
+                }
 
                 if (userDetails == null)
                 {
@@ -98,14 +107,14 @@ namespace MOTOSystem.Controllers
             return true;
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            Session.Remove("userID");
-            Session.Remove("userName");
-            return RedirectToAction("Index", "Home");
+            Session["userID"] = null;
+            Session["userName"] = null;
+            return RedirectToAction("Login", "Login");
+
         }
     }
 }
