@@ -57,8 +57,14 @@
                                     <p>@Html.DisplayFor(model => model.User.u_fname)</p>
                                 </div>
                             </div>
+                            @Html.HiddenFor(model => model.p_id)
                             <br />
-                            <input type="submit" value="Padam" class="btn btn-danger" onclick="return confirm('Anda yakin ingin hapuskan data rekod tersebut?');" />
+                            @using (Html.BeginForm())
+                            {
+                                //@Html.AntiForgeryToken()
+                                <input type="submit" value="Padam" class="btn btn-danger" onclick="return confirm('Anda yakin ingin hapuskan data rekod tersebut?');" />
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -73,7 +79,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-actions no-color">
-        @Html.ActionLink("Kembali", "Index")
+        @Html.ActionLink("Kembali", "IndexTeacher")
     </div>
 }
 

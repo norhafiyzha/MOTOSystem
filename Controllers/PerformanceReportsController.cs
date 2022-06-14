@@ -161,7 +161,7 @@ namespace MengajiOneToOneSystem.Controllers
 
         // POST: PerformanceReports/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);
