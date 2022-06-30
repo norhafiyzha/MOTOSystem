@@ -51,6 +51,7 @@ namespace MengajiOneToOneSystem.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);
+            ViewBag.status = performanceReport.p_status.ToString();
             if (performanceReport == null)
             {
                 return HttpNotFound();
@@ -173,8 +174,6 @@ namespace MengajiOneToOneSystem.Controllers
         }
 
 
-        [HttpPost, ActionName("DetailsStudent")]
-        [ValidateAntiForgeryToken]
         public ActionResult Approve(int id)
         {
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);
