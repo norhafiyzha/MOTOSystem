@@ -69,9 +69,8 @@
 
                                 <br />
                                 <br />
-                                <div class="btn btn-success">
-                                    <input type="submit" value="Luluskan" class="btn btn-default" />
-                                </div>
+                                @if (ViewBag.status != "Luluskan")
+                                {@Html.ActionLink("Luluskan", "Approve", new { id = Model.p_id }, new { @class = "btn btn-success" })}
                                 <button class="btn btn-info" onclick="window.print()">Print</button>
 
 

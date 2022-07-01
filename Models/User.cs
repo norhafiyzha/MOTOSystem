@@ -13,7 +13,6 @@ namespace MOTOSystem.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.Web;
 
     public partial class User
     {
@@ -24,7 +23,6 @@ namespace MOTOSystem.Models
             this.PerformanceReports = new HashSet<PerformanceReport>();
             this.SalaryInvoices = new HashSet<SalaryInvoice>();
         }
-
         [Required]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }

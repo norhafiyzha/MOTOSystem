@@ -35,7 +35,7 @@ namespace MOTOSystem.Models
         [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Id Laporan")]
         public int p_id { get; set; }
-    
+
         public virtual User User { get; set; }
     }
 }

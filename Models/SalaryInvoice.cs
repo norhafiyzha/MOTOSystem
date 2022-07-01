@@ -32,7 +32,7 @@ namespace MOTOSystem.Models
         [Required]
         [DisplayName("Bulan")]
         public Nullable<int> i_month { get; set; }
-    
+
         public virtual User User { get; set; }
     }
 }

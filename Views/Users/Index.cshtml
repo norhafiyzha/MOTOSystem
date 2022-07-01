@@ -42,56 +42,61 @@
                 @Html.ActionLink("Pengguna Baharu", "Create", null, new { @class = "btn btn-primary" })
             </p>
             <br />
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.u_email)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.u_fname)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.u_lname)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.u_roles)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.u_contact)
-                    </th>
+            <div class="table-responsive">
+                <table class="table" id="example1">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.u_email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.u_fname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.u_lname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.u_roles)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.u_contact)
+                            </th>
 
-                    <th></th>
-                </tr>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.u_email)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.u_fname)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.u_lname)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.u_roles)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.u_contact)
-                        </td>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.u_email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.u_fname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.u_lname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.u_roles)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.u_contact)
+                                </td>
 
-                        <td>
-                            @Html.ActionLink("Kemaskini", "Edit", new { id = item.u_id }, new { @class = "btn btn-warning" })
-                            @Html.ActionLink("Maklumat", "Details", new { id = item.u_id }, new { @class = "btn btn-info" })
-                            @Html.ActionLink("Padam", "Delete", new { id = item.u_id }, new { @class = "btn btn-danger" })
+                                <td>
+                                    @Html.ActionLink("Kemaskini", "Edit", new { id = item.u_id }, new { @class = "btn btn-warning" })
+                                    @Html.ActionLink("Maklumat", "Details", new { id = item.u_id }, new { @class = "btn btn-info" })
+                                    @Html.ActionLink("Padam", "Delete", new { id = item.u_id }, new { @class = "btn btn-danger" })
 
-                        </td>
-                    </tr>
-                }
-
-            </table>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!-- //forms 2 -->
     </section>

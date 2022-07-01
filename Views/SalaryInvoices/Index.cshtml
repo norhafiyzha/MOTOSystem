@@ -38,57 +38,66 @@
                 <h3>Rekod Keseluruhan Elaun Pengajar</h3>
             </div>
             <p>
-                @Html.ActionLink("Rekod Baharu", "Create", null, new { @class = "btn btn-primary" })
-            </p>
-            <br />
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.i_id)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.User.u_fname)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.i_amount)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.i_status)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.i_month)
-                    </th>
-
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
+                @if (Session["userRole"].ToString() == "Admin")
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.i_id)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.User.u_roles) @Html.DisplayFor(modelItem => item.User.u_fname) @Html.DisplayFor(modelItem => item.User.u_lname)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.i_amount)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.i_status)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.i_month)
-                        </td>
-
-                        <td>
-                            @Html.ActionLink("Kemaskini", "Edit", new { id = item.i_id }, new { @class = "btn btn-warning" })
-                            @Html.ActionLink("Maklumat", "Details", new { id = item.i_id }, new { @class = "btn btn-info" })
-                            @Html.ActionLink("Padam", "Delete", new { id = item.i_id }, new { @class = "btn btn-danger" })
-                        </td>
-                    </tr>
+                    @Html.ActionLink("Rekod Baharu", "Create", null, new { @class = "btn btn-primary" })
                 }
+                </p>
+            <br />
+            <table class="table" id="example1">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.i_id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User.u_fname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.i_amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.i_status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.i_month)
+                        </th>
 
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.i_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User.u_roles) @Html.DisplayFor(modelItem => item.User.u_fname) @Html.DisplayFor(modelItem => item.User.u_lname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.i_amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.i_status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.i_month)
+                            </td>
+
+                            <td>
+                                @if (Session["userRole"].ToString() == "Admin")
+                                {
+                                    @Html.ActionLink("Kemaskini", "Edit", new { id = item.i_id }, new { @class = "btn btn-warning" })
+                                    @Html.ActionLink("Padam", "Delete", new { id = item.i_id }, new { @class = "btn btn-danger" })
+                                }
+                                    @Html.ActionLink("Maklumat", "Details", new { id = item.i_id }, new { @class = "btn btn-info" })
+                                </td>
+                        </tr>
+                    }
+                </tbody>
             </table>
         </div>
         <!-- //forms 2 -->

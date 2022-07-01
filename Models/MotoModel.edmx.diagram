@@ -7,7 +7,7 @@
       <Diagram DiagramId="26a1e9926fdc488aada0fac2b485d5cb" Name="Diagram1">
         <EntityTypeShape EntityType="moto_dbModel.Class_Package" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="moto_dbModel.ClassRecord" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="moto_dbModel.PerformanceReport" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="moto_dbModel.PerformanceReport" Width="1.5" PointX="3.375" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="moto_dbModel.SalaryInvoice" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="moto_dbModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="moto_dbModel.User" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />

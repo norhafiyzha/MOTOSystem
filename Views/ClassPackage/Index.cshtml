@@ -32,7 +32,7 @@
     </nav>
     <!-- //breadcrumbs -->
     <!-- forms -->
-    <section class="forms">
+    <section class="forms" >
         <!-- forms 2 -->
         <div class="card card_border py-2 mb-4">
             <div class="cards__heading">
@@ -42,36 +42,38 @@
                 @Html.ActionLink("Pakej Baharu", "Create", null, new { @class = "btn btn-primary" })
             </p>
             <br />
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.cp_name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.cp_fees)
-                    </th>
-                    <th></th>
-                </tr>
+            <table class="table" id="example1">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.cp_name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.cp_fees)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cp_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cp_fees)
+                            </td>
 
-                @foreach (var item in Model)
-                {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.cp_name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.cp_fees)
-                </td>
+                            <td>
+                                @Html.ActionLink("Kemaskini", "Edit", new { id = item.cp_id }, new { @class = "btn btn-warning" })
+                                @Html.ActionLink("Maklumat", "Details", new { id = item.cp_id }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("Padam", "Delete", new { id = item.cp_id }, new { @class = "btn btn-danger" })
 
-                <td>
-                    @Html.ActionLink("Kemaskini", "Edit", new { id = item.cp_id }, new { @class = "btn btn-warning" })
-                    @Html.ActionLink("Maklumat", "Details", new { id = item.cp_id }, new { @class = "btn btn-info" })
-                    @Html.ActionLink("Padam", "Delete", new { id = item.cp_id }, new { @class = "btn btn-danger" })
-
-                </td>
-            </tr>
-                }
-
+                            </td>
+                        </tr>
+                    }
+                </tbody>
             </table>
         </div>
         <!-- //forms 2 -->

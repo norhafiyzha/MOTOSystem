@@ -25,8 +25,18 @@ namespace MengajiOneToOneSystem.Controllers
 
         public ActionResult IndexTeacher()
         {
-            var performanceReports = db.PerformanceReports;
-            return View(performanceReports.ToList());
+            var role = Session["userRole"].ToString();
+            var ID = Session["UserID"];
+            if(role == "Ustaz" || role == "Ustazah")
+            {
+                var performanceReports = db.PerformanceReports.Where(r => r.class_ref == ID);
+                return View(performanceReports.ToList());
+            }
+            else
+            {
+                var performanceReports = db.PerformanceReports;
+                return View(performanceReports.ToList());
+            }
         }
 
         // GET: PerformanceReports/Details/5
@@ -51,6 +61,7 @@ namespace MengajiOneToOneSystem.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);
+            ViewBag.status = performanceReport.p_status.ToString();
             if (performanceReport == null)
             {
                 return HttpNotFound();
@@ -80,7 +91,9 @@ namespace MengajiOneToOneSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                var id = Session["userID"].ToString();
                 performanceReport.p_status = "Pending";
+                performanceReport.class_ref = id;
                 db.PerformanceReports.Add(performanceReport);
                 db.SaveChanges();
                 return RedirectToAction("IndexTeacher");
@@ -173,8 +186,6 @@ namespace MengajiOneToOneSystem.Controllers
         }
 
 
-        [HttpPost, ActionName("DetailsStudent")]
-        [ValidateAntiForgeryToken]
         public ActionResult Approve(int id)
         {
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);

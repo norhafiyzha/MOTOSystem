@@ -41,47 +41,51 @@
                 @Html.ActionLink("Rekod Baharu", "Create", null, new { @class = "btn btn-primary" })
             </p>
             <br />
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.class_time)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.User.u_fname)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.class_teacher)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Class_Package1.cp_name)
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
-                {
+            <table class="table" id="exapmle1">
+                <thead>
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.class_time)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.User.u_fname)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.class_teacher)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Class_Package1.cp_name)
-                        </td>
-
-                        <td>
-                            @Html.ActionLink("Kemaskini", "Edit", new { id = item.class_id }, new { @class = "btn btn-warning" })
-                            @Html.ActionLink("Maklumat", "Details", new { id = item.class_id }, new { @class = "btn btn-info" })
-                            @Html.ActionLink("Padam", "Delete", new { id = item.class_id }, new { @class = "btn btn-danger" })
-
-                        </td>
+                        <th>
+                            @Html.DisplayNameFor(model => model.class_time)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User.u_fname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.class_teacher)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Class_Package1.cp_name)
+                        </th>
+                        <th></th>
                     </tr>
-                }
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.class_time)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User.u_fname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.class_teacher)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Class_Package1.cp_name)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Kemaskini", "Edit", new { id = item.class_id }, new { @class = "btn btn-warning" })
+                                @Html.ActionLink("Maklumat", "Details", new { id = item.class_id }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("Padam", "Delete", new { id = item.class_id }, new { @class = "btn btn-danger" })
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
 
             </table>
         </div>

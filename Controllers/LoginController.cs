@@ -111,8 +111,7 @@ namespace MOTOSystem.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            Session["userID"] = null;
-            Session["userName"] = null;
+            Session.Abandon();
             return RedirectToAction("Login", "Login");
 
         }

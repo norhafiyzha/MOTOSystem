@@ -17,8 +17,18 @@ namespace MOTOSystem.Controllers
         // GET: SalaryInvoices
         public ActionResult Index()
         {
-            var salaryInvoices = db.SalaryInvoices.Include(s => s.User);
-            return View(salaryInvoices.ToList());
+            var role = Session["userRole"].ToString();
+            var ID = Session["UserID"];
+            if (role == "Ustaz" || role == "Ustazah")
+            {
+                var salaryInvoices = db.SalaryInvoices.Include(s => s.User).Where(x => x.u_id == ID);
+                return View(salaryInvoices.ToList());
+            }
+            else
+            {
+                var salaryInvoices = db.SalaryInvoices.Include(s => s.User);
+                return View(salaryInvoices.ToList());
+            }
         }
 
         // GET: SalaryInvoices/Details/5

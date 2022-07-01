@@ -238,6 +238,7 @@
     <Content Include="assets\images\team4.jpg" />
     <Content Include="assets\images\template1.jpg" />
     <Content Include="assets\images\template2.jpg" />
+    <Content Include="assets\images\user.png" />
     <Content Include="assets\js\bar.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\Chart.min.js" />
