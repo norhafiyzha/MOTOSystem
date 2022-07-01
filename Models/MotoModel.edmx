@@ -44,6 +44,8 @@
           <Property Name="i_status" Type="varchar" MaxLength="15" />
           <Property Name="u_id" Type="varchar" MaxLength="10" />
           <Property Name="i_month" Type="int" />
+          <Property Name="i_allowance" Type="float" />
+          <Property Name="i_classes" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -188,6 +190,8 @@
           <Property Name="u_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="i_month" Type="Int32" />
           <NavigationProperty Name="User" Relationship="Self.FK_SalaryInvoice_User" FromRole="SalaryInvoice" ToRole="User" />
+          <Property Name="i_allowance" Type="Double" />
+          <Property Name="i_classes" Type="Int32" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -329,6 +333,8 @@
           <EntitySetMapping Name="SalaryInvoices">
             <EntityTypeMapping TypeName="moto_dbModel.SalaryInvoice">
               <MappingFragment StoreEntitySet="SalaryInvoice">
+                <ScalarProperty Name="i_classes" ColumnName="i_classes" />
+                <ScalarProperty Name="i_allowance" ColumnName="i_allowance" />
                 <ScalarProperty Name="i_id" ColumnName="i_id" />
                 <ScalarProperty Name="i_amount" ColumnName="i_amount" />
                 <ScalarProperty Name="i_status" ColumnName="i_status" />

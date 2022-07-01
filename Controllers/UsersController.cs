@@ -69,6 +69,7 @@ namespace MOTOSystem.Controllers
                 var unhashedPass = user.u_password;
                 user.u_password = HashPassword(unhashedPass);
                 db.Users.Add(user);
+                TempData["AlertMessage"] = "Maklumat pengguna baharu telah berjaya direkodkan.";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -103,6 +104,7 @@ namespace MOTOSystem.Controllers
                 var unhashedPass = user.u_password;
                 user.u_password = HashPassword(unhashedPass);
                 db.Entry(user).State = EntityState.Modified;
+                TempData["AlertMessage"] = "Maklumat pengguna telah berjaya dikemaskini.";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -134,6 +136,7 @@ namespace MOTOSystem.Controllers
             {
                 
                 db.Entry(user).State = EntityState.Modified;
+                TempData["AlertMessage"] = "Maklumat anda telah berjaya dikemaskini. Sila log masuk semula.";
                 db.SaveChanges();
                 return RedirectToAction("EditProfile");
             }
@@ -167,6 +170,7 @@ namespace MOTOSystem.Controllers
                 var unhashedPass = user.u_password;
                 user.u_password = HashPassword(unhashedPass);
                 db.Entry(user).State = EntityState.Modified;
+                TempData["AlertMessage"] = "Kata laluan anda telah berjaya dikemaskini. Sila log masuk semula.";
                 db.SaveChanges();
                 return RedirectToAction("ChangePassword");
             }
@@ -195,6 +199,7 @@ namespace MOTOSystem.Controllers
         {
             User user = db.Users.Find(id);
             db.Users.Remove(user);
+            TempData["AlertMessage"] = "Maklumat pengguna telah berjaya dihapuskan.";
             db.SaveChanges();
             return RedirectToAction("Index");
         }

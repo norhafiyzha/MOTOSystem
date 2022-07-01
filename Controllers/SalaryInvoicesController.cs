@@ -67,11 +67,16 @@ namespace MOTOSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "i_id,i_amount,i_status,u_id,i_month")] SalaryInvoice salaryInvoice)
+        public ActionResult Create([Bind(Include = "i_id,i_amount,i_status,u_id,i_month,i_allowance,i_classes")] SalaryInvoice salaryInvoice)
         {
             if (ModelState.IsValid)
             {
+                var ID = Session["UserID"];
                 db.SalaryInvoices.Add(salaryInvoice);
+                //try to come out with correct sql
+                //var admin = db.Users.Where(x => x.ClassRecords.c == ID).Count();
+                salaryInvoice.i_status = "Belum Dibayar";
+                TempData["AlertMessage"] = "Rekod gaji berjaya direkodkan";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -109,11 +114,12 @@ namespace MOTOSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "i_id,i_amount,i_status,u_id,i_month")] SalaryInvoice salaryInvoice)
+        public ActionResult Edit([Bind(Include = "i_id,i_amount,i_status,u_id,i_month,i_allowance,i_classes")] SalaryInvoice salaryInvoice)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(salaryInvoice).State = EntityState.Modified;
+                TempData["AlertMessage"] = "Rekod gaji berjaya dikemaskini";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -143,6 +149,7 @@ namespace MOTOSystem.Controllers
         {
             SalaryInvoice salaryInvoice = db.SalaryInvoices.Find(id);
             db.SalaryInvoices.Remove(salaryInvoice);
+            TempData["AlertMessage"] = "Rekod gaji berjaya dibuang";
             db.SaveChanges();
             return RedirectToAction("Index");
         }

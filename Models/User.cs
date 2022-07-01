@@ -23,7 +23,8 @@ namespace MOTOSystem.Models
             this.PerformanceReports = new HashSet<PerformanceReport>();
             this.SalaryInvoices = new HashSet<SalaryInvoice>();
         }
-        [Required]
+
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
 

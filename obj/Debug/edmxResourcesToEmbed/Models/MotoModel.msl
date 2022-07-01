@@ -37,6 +37,8 @@
     <EntitySetMapping Name="SalaryInvoices">
       <EntityTypeMapping TypeName="moto_dbModel.SalaryInvoice">
         <MappingFragment StoreEntitySet="SalaryInvoice">
+          <ScalarProperty Name="i_classes" ColumnName="i_classes" />
+          <ScalarProperty Name="i_allowance" ColumnName="i_allowance" />
           <ScalarProperty Name="i_id" ColumnName="i_id" />
           <ScalarProperty Name="i_amount" ColumnName="i_amount" />
           <ScalarProperty Name="i_status" ColumnName="i_status" />

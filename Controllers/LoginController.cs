@@ -25,19 +25,19 @@ namespace MOTOSystem.Controllers
             using (moto_dbEntities db = new moto_dbEntities())
             {
                 var userDetails = db.Users.Where(x => x.u_email == uModel.u_email).FirstOrDefault();
-                var PasswordCorrect = VerifyHashedPassword(userDetails.u_password, uModel.u_password);
-
-                if (PasswordCorrect == false)
-                {
-                    uModel.LoginErrorMessage = "Pengguna tidak dijumpa";
-                    return View("Login", uModel);
-                }
 
                 if (userDetails == null)
                 {
                     uModel.LoginErrorMessage = " ID Pengguna atau Kata Laluan Tidak Sah";
                     return View("Login", uModel);
                 }
+                var PasswordCorrect = VerifyHashedPassword(userDetails.u_password, uModel.u_password);
+                if (PasswordCorrect == false)
+                {
+                    uModel.LoginErrorMessage = "Pengguna tidak dijumpa";
+                    return View("Login", uModel);
+                }
+
                 else
                 {
                     if (userDetails.u_roles == "Admin")

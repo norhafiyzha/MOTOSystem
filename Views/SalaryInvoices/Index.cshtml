@@ -5,6 +5,13 @@
 }
 
 <div class="container-fluid content-top-gap">
+    @if (TempData["AlertMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessage"]
+        </div>
+
+    }
 
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb" class="mb-4">
@@ -42,14 +49,12 @@
                 {
                     @Html.ActionLink("Rekod Baharu", "Create", null, new { @class = "btn btn-primary" })
                 }
-                </p>
+            </p>
             <br />
             <table class="table" id="example1">
                 <thead>
                     <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.i_id)
-                        </th>
+
                         <th>
                             @Html.DisplayNameFor(model => model.User.u_fname)
                         </th>
@@ -62,6 +67,9 @@
                         <th>
                             @Html.DisplayNameFor(model => model.i_month)
                         </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.i_classes)
+                        </th>
 
                         <th></th>
                     </tr>
@@ -71,9 +79,6 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.i_id)
-                            </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.User.u_roles) @Html.DisplayFor(modelItem => item.User.u_fname) @Html.DisplayFor(modelItem => item.User.u_lname)
                             </td>
@@ -86,15 +91,19 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.i_month)
                             </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.i_classes)
+                            </td>
 
                             <td>
                                 @if (Session["userRole"].ToString() == "Admin")
                                 {
                                     @Html.ActionLink("Kemaskini", "Edit", new { id = item.i_id }, new { @class = "btn btn-warning" })
+                                    <t />
                                     @Html.ActionLink("Padam", "Delete", new { id = item.i_id }, new { @class = "btn btn-danger" })
                                 }
-                                    @Html.ActionLink("Maklumat", "Details", new { id = item.i_id }, new { @class = "btn btn-info" })
-                                </td>
+                                @Html.ActionLink("Maklumat", "Details", new { id = item.i_id }, new { @class = "btn btn-info" })
+                            </td>
                         </tr>
                     }
                 </tbody>

@@ -19,20 +19,28 @@ namespace MOTOSystem.Models
         [Required]
         [DisplayName("ID Invois")]
         public int i_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Jumlah Elaun")]
 
         public Nullable<double> i_amount { get; set; }
-        [Required]
+        
         [DisplayName("Status")]
         public string i_status { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
         [DisplayName("Bulan")]
         public Nullable<int> i_month { get; set; }
 
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Elaun per Kelas")]
+        public Nullable<double> i_allowance { get; set; }
+
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Jumlah Kelas")]
+        public Nullable<int> i_classes { get; set; }
+    
         public virtual User User { get; set; }
     }
 }

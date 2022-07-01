@@ -33,14 +33,20 @@
                         </div>
                     </div>
 
+
                     <div class="form-group">
-                        @Html.LabelFor(model => model.i_status, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.i_allowance, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.DropDownList("i_status", new List<SelectListItem>{
-                                           new SelectListItem{ Text="Belum Dibayar", Value = "Belum Dibayar" },
-                                           new SelectListItem{ Text="Dalam Proses", Value = "Dalam Proses" },
-                                           new SelectListItem{ Text="Telah Dibayar", Value = "Telah Dibayar" }}, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.i_status, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.i_allowance, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.i_allowance, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.i_classes, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.i_classes, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.i_classes, "", new { @class = "text-danger" })
                         </div>
                     </div>
 

@@ -44,6 +44,8 @@
     <Property Name="u_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="i_month" Type="Int32" />
     <NavigationProperty Name="User" Relationship="Self.FK_SalaryInvoice_User" FromRole="SalaryInvoice" ToRole="User" />
+    <Property Name="i_allowance" Type="Double" />
+    <Property Name="i_classes" Type="Int32" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>

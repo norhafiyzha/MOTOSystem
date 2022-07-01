@@ -39,6 +39,8 @@
     <Property Name="i_status" Type="varchar" MaxLength="15" />
     <Property Name="u_id" Type="varchar" MaxLength="10" />
     <Property Name="i_month" Type="int" />
+    <Property Name="i_allowance" Type="float" />
+    <Property Name="i_classes" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
