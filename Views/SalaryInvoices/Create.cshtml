@@ -25,13 +25,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.i_amount, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.i_amount, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.i_amount, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
 
 
                     <div class="form-group">
@@ -41,7 +34,7 @@
                             @Html.ValidationMessageFor(model => model.i_allowance, "", new { @class = "text-danger" })
                         </div>
                     </div>
-
+                    <!-- dynamic changing display of no of classes int classNo = db.ClassRecords.Where(s => s.class_teacher == ID).Count();-->
                     <div class="form-group">
                         @Html.LabelFor(model => model.i_classes, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">

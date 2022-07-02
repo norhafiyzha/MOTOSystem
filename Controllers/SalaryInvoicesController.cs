@@ -56,7 +56,7 @@ namespace MOTOSystem.Controllers
                    Value = s.u_id
                })
                .ToList();
-
+            // put here dynamic chaging code
             ViewBag.u_id = new SelectList(clients, "Value", "Text");
             //ViewBag.u_id = new SelectList(db.Users, "u_id", "u_password");
             return View();
@@ -71,10 +71,13 @@ namespace MOTOSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                var ID = Session["UserID"];
+                String ID = salaryInvoice.u_id;
+                int classNo = db.ClassRecords.Where(s => s.class_teacher == ID).Count();
+                salaryInvoice.i_classes = classNo;
+                salaryInvoice.i_amount = classNo * salaryInvoice.i_allowance;
                 db.SalaryInvoices.Add(salaryInvoice);
                 //try to come out with correct sql
-                //var admin = db.Users.Where(x => x.ClassRecords.c == ID).Count();
+                 
                 salaryInvoice.i_status = "Belum Dibayar";
                 TempData["AlertMessage"] = "Rekod gaji berjaya direkodkan";
                 db.SaveChanges();
