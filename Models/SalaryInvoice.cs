@@ -11,15 +11,34 @@ namespace MOTOSystem.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class SalaryInvoice
     {
+        [Required]
+        [DisplayName("ID Invois")]
         public int i_id { get; set; }
+
+        [DisplayName("Jumlah Elaun")]
+
         public Nullable<double> i_amount { get; set; }
+        
+        [DisplayName("Status")]
         public string i_status { get; set; }
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Bulan")]
         public Nullable<int> i_month { get; set; }
+
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Elaun per Kelas")]
         public Nullable<double> i_allowance { get; set; }
+
+
+        [DisplayName("Jumlah Kelas")]
         public Nullable<int> i_classes { get; set; }
     
         public virtual User User { get; set; }

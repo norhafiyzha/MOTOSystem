@@ -11,17 +11,31 @@ namespace MOTOSystem.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PerformanceReport
     {
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Bulan")]
         public Nullable<int> p_month { get; set; }
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("ID Pengguna")]
         public string u_id { get; set; }
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Prestasi Pelajar")]
         public string student_performance { get; set; }
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Tarikh Kelas")]
         public Nullable<System.DateTime> class_date { get; set; }
+        [DisplayName("Rujukan Kelas")]
         public string class_ref { get; set; }
+        [DisplayName("Status Prestasi")]
         public string p_status { get; set; }
+        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+        [DisplayName("Id Laporan")]
         public int p_id { get; set; }
-    
+
         public virtual User User { get; set; }
     }
 }
