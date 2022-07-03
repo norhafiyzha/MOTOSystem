@@ -30,20 +30,33 @@
                     <h1><a href="index.html"></a></h1>
                 </div>
 
-                <!-- if logo is image enable this -->
-                <!-- image logo --
-            <div class="logo">
-              <a href="~/index.html">
-                <img src="~/image-path" alt="Your logo" title="Your logo" class="img-fluid" style="height:35px;" />
-              </a>
-            </div>
-            <!-- //image logo -->
+                @if (Session["userRole"].ToString() == "Admin")
+                {
+                    <!-- //image logo -->
 
-                <div class="logo-icon text-center">
-                    <a href="@Url.Action("ADashboard", "Users")" title="logo"><img src="~/assets/images/logo.png" alt="logo-icon"> </a>
-                </div>
-                <!-- //logo end -->
+                    <div class="logo-icon text-center">
+                        <a href="@Url.Action("ADashboard", "Home")" title="logo"><img src="~/assets/images/logo.png" alt="logo-icon"> </a>
+                    </div>
+                    <!-- //logo end -->
+                }
+                @if (Session["userRole"].ToString() == "Ustaz" || Session["userRole"].ToString() == "Ustazah")
+                {
+                    <!-- //image logo -->
 
+                    <div class="logo-icon text-center">
+                        <a href="@Url.Action("TDashboard", "Home")" title="logo"><img src="~/assets/images/logo.png" alt="logo-icon"> </a>
+                    </div>
+                    <!-- //logo end -->
+                }
+                @if (Session["userRole"].ToString() == "Pelajar")
+                {
+                    <!-- //image logo -->
+
+                    <div class="logo-icon text-center">
+                        <a href="@Url.Action("SDashboard", "Home")" title="logo"><img src="~/assets/images/logo.png" alt="logo-icon"> </a>
+                    </div>
+                    <!-- //logo end -->
+                }
                 <div class="sidebar-menu-inner">
 
                     <!-- sidebar nav start -->
@@ -59,7 +72,7 @@
                                 <ul class="sub-menu-list">
                                     <li><a href="@Url.Action("Index","Users" )">Rekod Keseluruhan Pengguna</a></li>
                                     @*<li><a href="@Url.Action("Index","Users" )">Rekod Pelajar</a> </li>
-                    <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>*@
+                            <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>*@
                                 </ul>
                             </li>
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
@@ -83,22 +96,6 @@
                         {
                             <li><a href="@Url.Action("Index","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
                         }
-                        @*<li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
-        <li class="menu-list">
-            <a href="@Url.Action("Index","Users" )">
-                <i class="fa fa-address-book"></i>
-                <span>Pengurusan Pengguna<i class="lnr lnr-chevron-right"></i></span>
-            </a>
-            <ul class="sub-menu-list">
-                <li><a href="@Url.Action("Index","Users" )">Rekod Keseluruhan Pengguna</a></li>
-                <li><a href="@Url.Action("Index","Users" )">Rekod Pelajar</a> </li>
-                <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>
-            </ul>
-        </li>
-
-        <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Pengurusan Gaji</span></a></li>
-        <li><a href="@Url.Action("Index","ClassPackage")"><i class="fa fa-cogs"></i> <span>Pengurusan Pakej</span></a></li>*@
-
                     </ul>
                     <!-- //sidebar nav end -->
                     <!-- toggle button start -->
