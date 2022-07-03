@@ -74,6 +74,7 @@ namespace MOTOSystem.Controllers
                 String ID = salaryInvoice.u_id;
                 int classNo = db.ClassRecords.Where(s => s.class_teacher == ID).Count();
                 salaryInvoice.i_classes = classNo;
+                //possible set up better clac
                 salaryInvoice.i_amount = classNo * salaryInvoice.i_allowance;
                 db.SalaryInvoices.Add(salaryInvoice);
                 //try to come out with correct sql
@@ -155,6 +156,19 @@ namespace MOTOSystem.Controllers
             TempData["AlertMessage"] = "Rekod gaji berjaya dibuang";
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult financialReport(int id)
+        {
+            SalaryInvoice salary = db.SalaryInvoices.Find(id);
+            var ID = salary.u_id;
+            ViewBag.name = salary.User.u_fname.ToString() + " " + salary.User.u_lname.ToString();
+            ViewBag.month = salary.i_month;
+            ViewBag.Total = salary.i_amount;
+            ViewBag.status = salary.i_status;
+            ViewBag.pClass = salary.i_allowance;
+            var ClassRecord = db.ClassRecords.Include(c => c.Class_Package1).Include(c => c.User).Where(s => s.class_teacher == ID);
+            return View(ClassRecord.ToList());
         }
 
         protected override void Dispose(bool disposing)

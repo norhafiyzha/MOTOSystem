@@ -19,7 +19,7 @@ namespace MOTOSystem.Models
         [Required]
         [DisplayName("ID Invois")]
         public int i_id { get; set; }
-        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+
         [DisplayName("Jumlah Elaun")]
 
         public Nullable<double> i_amount { get; set; }
@@ -37,7 +37,7 @@ namespace MOTOSystem.Models
         [DisplayName("Elaun per Kelas")]
         public Nullable<double> i_allowance { get; set; }
 
-        [Required(ErrorMessage = "Ruangan ini perlu dipenuhi")]
+
         [DisplayName("Jumlah Kelas")]
         public Nullable<int> i_classes { get; set; }
     

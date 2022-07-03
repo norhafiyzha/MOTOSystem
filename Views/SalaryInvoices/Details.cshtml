@@ -76,6 +76,7 @@
                             <br />
                             <br />
                             @Html.ActionLink("Kemaskini", "Edit", new { id = Model.i_id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Print Invoice", "financialReport", new { id = Model.i_id }, new { target = "_blank", @class = "btn btn-primary" })
                         </div>
                     </div>
                 </div>
