@@ -63,7 +63,7 @@
                     <ul class="nav nav-pills nav-stacked custom-nav">
                         @if (Session["userRole"].ToString() == "Admin")
                         {
-                            <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
+                            <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Rekod Pengurusan Kelas</span></a></li>
                             <li class="menu-list">
                                 <a href="@Url.Action("Index","Users" )">
                                     <i class="fa fa-address-book"></i>
@@ -72,23 +72,24 @@
                                 <ul class="sub-menu-list">
                                     <li><a href="@Url.Action("Index","Users" )">Rekod Keseluruhan Pengguna</a></li>
                                     @*<li><a href="@Url.Action("Index","Users" )">Rekod Pelajar</a> </li>
-                            <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>*@
+                    <li><a href="@Url.Action("Index","Users" )">Rekod Pengajar</a> </li>*@
                                 </ul>
                             </li>
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
                             <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Rekod Pengurusan Gaji</span></a></li>
                             <li><a href="@Url.Action("Index","ClassPackage")"><i class="fa fa-cogs"></i> <span>Rekod Pengurusan Pakej</span></a></li>
+                            <li><a href="/assets/images/Admin.pdf"><i class="fa fa-download"></i> <span>Panduan Pengguna</span></a></li>
                         }
                         @if (Session["userRole"].ToString() == "Ustaz")
                         {
-                            <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Rekod Kelas</span></a></li>
+                            <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
-                            <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Rekod Pengurusan Gaji</span></a></li>
+                            <li><a href="@Url.Action("Index","SalaryInvoices")" download="pdf"><i class="fa fa-file-text"></i> <span>Rekod Pengurusan Gaji</span></a></li>
 
                         }
                         @if (Session["userRole"].ToString() == "Ustazah")
                         {
-                            <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Rekod Pengurusan Rekod Kelas</span></a></li>
+                            <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
                             <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Rekod Pengurusan Gaji</span></a></li>
                         }
