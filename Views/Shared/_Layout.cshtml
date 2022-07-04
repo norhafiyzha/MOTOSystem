@@ -85,6 +85,7 @@
                             <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
                             <li><a href="@Url.Action("Index","SalaryInvoices")" download="pdf"><i class="fa fa-file-text"></i> <span>Rekod Pengurusan Gaji</span></a></li>
+                            <li><a href="/assets/images/Tutor.pdf"><i class="fa fa-download"></i> <span>Panduan Pengguna</span></a></li>
 
                         }
                         @if (Session["userRole"].ToString() == "Ustazah")
@@ -92,10 +93,12 @@
                             <li><a href="@Url.Action("Index","ClassRecords")"><i class="fa fa-table"></i> <span>Pengurusan Rekod Kelas</span></a></li>
                             <li><a href="@Url.Action("IndexTeacher","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
                             <li><a href="@Url.Action("Index","SalaryInvoices")"><i class="fa fa-file-text"></i> <span>Rekod Pengurusan Gaji</span></a></li>
+                            <li><a href="/assets/images/Tutor.pdf"><i class="fa fa-download"></i> <span>Panduan Pengguna</span></a></li>
                         }
                         @if (Session["userRole"].ToString() == "Pelajar")
                         {
                             <li><a href="@Url.Action("Index","PerformanceReports")"><i class="fa fa-th"></i> <span>Rekod Prestasi Pelajar</span></a></li>
+                            <li><a href="/assets/images/Student.pdf"><i class="fa fa-download"></i> <span>Panduan Pengguna</span></a></li>
                         }
                     </ul>
                     <!-- //sidebar nav end -->
