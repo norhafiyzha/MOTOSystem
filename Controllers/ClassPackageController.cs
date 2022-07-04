@@ -51,6 +51,7 @@ namespace MOTOSystem.Controllers
             if (ModelState.IsValid)
             {
                 db.Class_Packages.Add(class_Package);
+                TempData["AlertMessage"] = "Pakej baharu telah berjaya direkodkan.";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -83,6 +84,7 @@ namespace MOTOSystem.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(class_Package).State = EntityState.Modified;
+                TempData["AlertMessage"] = "Pakej baharu telah berjaya dikemaskini.";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -111,6 +113,7 @@ namespace MOTOSystem.Controllers
         {
             Class_Package class_Package = db.Class_Packages.Find(id);
             db.Class_Packages.Remove(class_Package);
+            TempData["AlertMessage"] = "Pakej baharu telah berjaya dihapuskan.";
             db.SaveChanges();
             return RedirectToAction("Index");
         }

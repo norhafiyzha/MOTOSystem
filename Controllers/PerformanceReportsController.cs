@@ -95,6 +95,7 @@ namespace MengajiOneToOneSystem.Controllers
                 performanceReport.p_status = "Pending";
                 performanceReport.class_ref = id;
                 db.PerformanceReports.Add(performanceReport);
+                TempData["AlertMessage"] = "Penilaian prestasi pelajar telah berjaya direkodkan.";
                 db.SaveChanges();
                 return RedirectToAction("IndexTeacher");
             }
@@ -144,6 +145,7 @@ namespace MengajiOneToOneSystem.Controllers
             {
                 //db.PerformanceReports.Add(performanceReport);
                 db.Entry(performanceReport).State = EntityState.Modified;
+                TempData["AlertMessage"] = "Penilaian prestasi pelajar telah berjaya dikemaskini.";
                 db.SaveChanges();
                 return RedirectToAction("IndexTeacher");
             }
@@ -181,6 +183,7 @@ namespace MengajiOneToOneSystem.Controllers
         {
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);
             db.PerformanceReports.Remove(performanceReport);
+            TempData["AlertMessage"] = "Penilaian prestasi pelajar telah berjaya dihapuskan.";
             db.SaveChanges();
             return RedirectToAction("IndexTeacher");
         }
@@ -191,6 +194,7 @@ namespace MengajiOneToOneSystem.Controllers
             PerformanceReport performanceReport = db.PerformanceReports.Find(id);
             performanceReport.p_status = "Luluskan";
             db.Entry(performanceReport).State = EntityState.Modified;
+            TempData["AlertMessage"] = "Penilaian prestasi pelajar telah berjaya diluluskan.";
             db.SaveChanges();
             return RedirectToAction("Index");
         }

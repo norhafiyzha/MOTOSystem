@@ -74,6 +74,7 @@ namespace MOTOSystem.Controllers
             if (ModelState.IsValid)
             {
                 db.ClassRecords.Add(classRecord);
+                TempData["AlertMessage"] = "Jadual kelas telah berjaya direkodkan.";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -146,6 +147,7 @@ namespace MOTOSystem.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(classRecord).State = EntityState.Modified;
+                TempData["AlertMessage"] = "Jadual kelas telah berjaya dikemaskini.";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -176,6 +178,7 @@ namespace MOTOSystem.Controllers
         {
             ClassRecord classRecord = db.ClassRecords.Find(id);
             db.ClassRecords.Remove(classRecord);
+            TempData["AlertMessage"] = "Jadual kelas telah berjaya dihapuskan.";
             db.SaveChanges();
             return RedirectToAction("Index");
         }

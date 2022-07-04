@@ -5,7 +5,13 @@
 }
 
 <div class="container-fluid content-top-gap">
+    @if (TempData["AlertMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessage"]
+        </div>
 
+    }
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb" class="mb-4">
         <ol class="breadcrumb my-breadcrumb">

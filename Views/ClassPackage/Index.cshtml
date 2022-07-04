@@ -6,7 +6,13 @@
 
 
 <div class="container-fluid content-top-gap">
+    @if (TempData["AlertMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["AlertMessage"]
+        </div>
 
+    }
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb" class="mb-4">
         <ol class="breadcrumb my-breadcrumb">
@@ -32,7 +38,7 @@
     </nav>
     <!-- //breadcrumbs -->
     <!-- forms -->
-    <section class="forms" >
+    <section class="forms">
         <!-- forms 2 -->
         <div class="card card_border py-2 mb-4">
             <div class="cards__heading">

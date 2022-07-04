@@ -75,7 +75,7 @@ namespace MOTOSystem.Controllers
                 int classNo = db.ClassRecords.Where(s => s.class_teacher == ID).Count();
                 salaryInvoice.i_classes = classNo;
                 //possible set up better clac
-                salaryInvoice.i_amount = classNo * salaryInvoice.i_allowance;
+                salaryInvoice.i_amount = classNo * salaryInvoice.i_allowance ;
                 db.SalaryInvoices.Add(salaryInvoice);
                 //try to come out with correct sql
                  
